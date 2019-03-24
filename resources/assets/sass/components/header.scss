@@ -1,0 +1,255 @@
+@import 'variables';
+
+
+.block {
+    width: 100%;
+    height: 100vh  ;
+    background-color: #fff;
+}
+
+.header-wrap {
+    height: 100%;
+    max-height: 140px;
+}
+
+.header-line__back {
+    width: 100%;
+    height: 50px;
+
+    &--gray {
+        background-color: #696969;
+    }
+}
+
+.header-wrapper {
+    max-width: 1360px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav {
+    font-size: 12px;
+    display: flex;
+
+    &__button:focus {
+        outline: none;
+    }
+
+    &__items {
+        padding: 0;
+        margin: 0;
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        @include md {
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        justify-content: center;
+        height: 48px;
+        line-height: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #c3c3c3;
+
+        @include sm {
+            margin: 0;
+            padding: 0;
+        }
+
+        @include md {
+            padding: 0 15px;
+            margin: 0px 23px 0px -15px;
+        }
+
+    }
+
+    .active {
+        border-bottom: 2px solid #ffc925;
+        color: #fff;
+    }
+}
+
+.mm-navbar { 
+    --mm-color-background: #696969;
+    --mm-color-text-dimmed: #ff8900;
+    --mm-color-button: #fff;
+    height: 49px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+}
+.mm-panel { 
+    --mm-color-background: #696969;
+    --mm-color-text: #fff;
+    --mm-color-button: #ffc925;
+}
+
+.button {
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.header-popup {
+
+    &__button {
+        font-size: 12px;
+        max-width: 124px;
+        width: 100%;
+        background-color: #ff8900;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        width: 15px;
+        height: 16px;
+        margin-right: 15px;
+    }
+}
+
+.second-header-wrapper {
+    display: flex;
+    max-width: 1360px;
+    margin: auto;
+
+    @include sm {
+        justify-content: center;
+        padding-top: 5px;
+    }
+
+    @include md {
+        padding-top: 37px;
+        justify-content: space-between;
+    }
+}
+
+.header__logo svg {
+    width: 196px;
+    height: 38px;
+    display: none;
+
+    @include md {
+        display: block;
+    }
+}
+
+.header-callback__wrap {
+    width: auto;
+
+    @include sm {
+        display: none;
+    }
+
+    @include md {
+        display: flex;
+    }
+}
+
+.phone-wrap {
+    max-width: 380px;
+    height: 50px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .telphons {
+        display: block;
+        width: 145px;
+        text-decoration: none;
+        color: #000;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 16px;
+        margin-left: 13px;
+        margin-right: 44px;
+        
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.header-callback {
+
+    &__button--orange {
+        max-width: 198px;
+        width: 100%;
+        background-color: #ff8900;
+        color: #fff;
+        padding: 0 30px;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        width: 12px;
+        height: 17px;
+        margin-right: 10px;
+    }
+}
+
+.mmenu_ctm {
+    margin: auto;
+    margin-top: 5px;
+
+    @include sm {
+        display: block;
+    }
+
+    @include md {
+        display: none;
+    }
+
+    .phone-wrap {
+        display: block;
+        background-color: #696969;
+        max-width: 198px;
+
+        .telphons {
+            margin: auto;
+            margin-top: 5px;
+            color: #fff;
+        }
+    }
+}
+
+.header__options {
+    max-width: 260px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.header__option {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-icon {
+        width: 40px;
+        height: 32px;
+        margin-bottom: 8px;
+    }
+
+    &-title {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #3d3d3d; 
+    }
+}

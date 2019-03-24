@@ -1,0 +1,51 @@
+// Variables
+$hamburger-padding-x: 10px;
+$hamburger-padding-y: 12px;
+$hamburger-layer-color: #fff;
+
+@import "./node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "components/jquery.mmenu.all.scss";
+@import "variables";
+@import "mixins";
+@import "./node_modules/magnific-popup/src/css/settings";
+@import "./node_modules/magnific-popup/src/css/main.scss";
+@import "components/header.scss";
+@import "components/popup-enter.scss";
+@import "components/top-section.scss";
+
+
+
+
+
+body {
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+    line-height: 1.15;
+    font-family: $default-font;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #fff;
+  }
+  
+  .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  ::selection {
+    background-color: $accent;
+    color: #ffffff;
+  }
+
+  .wrapper {
+      width: 100%;
+      height: 100vh;
+  }
+  
+
