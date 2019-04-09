@@ -5,6 +5,7 @@ $hamburger-layer-color: #fff;
 
 @import "./node_modules/hamburgers/_sass/hamburgers/hamburgers";
 @import "components/jquery.mmenu.all.scss";
+@import "components/select2.scss";
 @import "variables";
 @import "mixins";
 @import "./node_modules/magnific-popup/src/css/settings";
@@ -12,6 +13,9 @@ $hamburger-layer-color: #fff;
 @import "components/header.scss";
 @import "components/popup-enter.scss";
 @import "components/top-section.scss";
+@import "components/product-cards.scss";
+@import "components/footer.scss";
+
 
 
 
@@ -26,6 +30,12 @@ body {
     overflow-x: hidden;
     margin: 0;
     background-color: #fff;
+  }
+
+  svg path {
+    stroke: inherit;
+    stroke-width: inherit;
+    fill: inherit;
   }
   
   .img-responsive {
@@ -43,9 +53,15 @@ body {
     color: #ffffff;
   }
 
+  ::-webkit-scrollbar
+{
+  width: 1px;  /* for vertical scrollbars */
+  height: 1px; /* for horizontal scrollbars */
+}
+
   .wrapper {
-      width: 100%;
-      height: 100vh;
+    width: 100%;
+    height: 100vh;
   }
   
 

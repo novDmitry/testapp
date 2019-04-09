@@ -27,5 +27,8 @@ mix.webpackConfig({
          output: {
             filename: 'sprite.svg'
          }
-})
-]});
+      })],
+   externals: {
+      jquery: 'jQuery'
+   }
+});

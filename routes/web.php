@@ -14,6 +14,13 @@ $_mock = json_decode(json_encode(config('mock')), FALSE);
 Route::get('/', function () use ($_mock) {
     return view('welcome', [
         '_mock' => $_mock,
+        
+    ]);
+});
+Route::get('item', function () use ($_mock) {
+    return view('item', [
+        '_mock' => $_mock,
+        
     ]);
 });
 Route::get('second', function () {

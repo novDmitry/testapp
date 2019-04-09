@@ -5,13 +5,13 @@
             <div class="field-wrap">
                 <label for="" class="field__title">
                     <div class="text">Ваш email</div> 
-                    <input type="email" name="email" class="popup-enter__input">
+                    <input type="email" name="email" data-msg="Это поле необходимо заполнить." data-msg-email="Пожалуйста, введите корректный адрес электронной почты." class="popup-enter__input" required>
                 </label>
             </div>
             <div class="field-wrap">
                 <label for="" class="field__title">
                     <div class="text">Пароль</div>
-                    <input type="password" class="popup-enter__input" >
+                    <input type="password" name="password" data-rule-minlength="6" data-msg="Это поле необходимо заполнить." data-msg-minlength="Пожалуйста, введите не меньше {0} символов." required class="popup-enter__input" >
                 </label>
             </div>
             <div class="checkbox-wrap" id="checkbox-wrap">
@@ -46,7 +46,33 @@
                     <svg style="width: 16px; height: 16px" class="svg-social">
                             <use xlink:href="sprite.svg#sprite-google"></use>
                         </svg>
-                <dis class="text">Google
+                <div class="text">Google</div>
         </div>
+    </div>
+</div>
+<div class="popup-wrapper mfp-hide popup-callback__wrap" id="popup-callback">
+    <div class="popup-enter popup-enter__wrapper">
+        <div class="title">Перезвони мне</div>
+        <form action="" class="popup-entert__form">
+            <div class="field-wrap">
+                <label for="" class="field__title">
+                    <div class="text">Номер телефона</div> 
+                    <input type="tel" name="tel" data-rule-minlength="17" data-msg="Это поле необходимо заполнить." data-msg-minlength="Введите номер телефона полностью" required class="popup-enter__input phone__mask">
+                </label>
+            </div>
+            <div class="field-wrap">
+                <input type="submit" value="Перезвонить мне" class="popup-enter__button--orange button">
+            </div>
+            <div class="popup-phone__wrap menu">
+                <div class="popup-phone__title">Или</div>
+                <a class="telphons" href="tel:+">+380 98 170 00 740</a>
+                <a class="telphons" href="tel:+">+380 98 170 00 740</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="popup-subscribe mfp-hide" id="subscribe">
+    <div class="popup-subscribe__wrap">
+        <div class="title">Вы успешно подписанны на рассылку!</div>
     </div>
 </div>
