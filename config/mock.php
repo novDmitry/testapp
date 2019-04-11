@@ -6,5 +6,7 @@ return [
     'cards' => config('mock.cards'),
     'footer' => config('mock.footer'),
     'prod' => config('mock.prod'),
-    'feedback' => config('mock.feedback')
+    'feedback' => config('mock.feedback'),
+    'rectangle_select' => config('mock.rectangle_select'),
+    'filter_category' => config('mock.filter_category')
 ];

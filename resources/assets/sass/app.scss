@@ -6,6 +6,7 @@ $hamburger-layer-color: #fff;
 @import "./node_modules/hamburgers/_sass/hamburgers/hamburgers";
 @import "components/jquery.mmenu.all.scss";
 @import "components/select2.scss";
+@import "components/ion.rangeSlider.min.css";
 @import "variables";
 @import "mixins";
 @import "./node_modules/magnific-popup/src/css/settings";
@@ -15,6 +16,7 @@ $hamburger-layer-color: #fff;
 @import "components/top-section.scss";
 @import "components/product-cards.scss";
 @import "components/footer.scss";
+@import "components/filter.scss";
 
 
 

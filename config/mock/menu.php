@@ -16,7 +16,7 @@ $data = [
         ],
         [
             'title' => 'Ccылка 2',
-            'link' => '/'
+            'link' => 'catalog'
         ],
         [
             'title' =>  'Ссылка 3',

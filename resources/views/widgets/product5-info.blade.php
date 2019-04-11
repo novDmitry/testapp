@@ -31,11 +31,17 @@
                         </div>
                 
                     <div class="product-info__stars">
-                            @foreach ($_mock->cards->products[4]->stars as $star)
-                            <svg class="stars__icon">
-                                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                            @for ($i = 1; $i < 6; $i++)
+                            @if ($i < $_mock->cards->products[4]->stars + 1)
+                            <svg class="stars__icon star-active">
+                                    <use xlink:href="sprite.svg#sprite-star-gold"></use>
                                 </svg>
-                            @endforeach
+                            @else
+                            <svg class="stars__icon ">
+                                    <use xlink:href="sprite.svg#sprite-star-gold"></use>
+                                </svg>
+                            @endif
+                            @endfor
                     </div>
                 
                     <div class="product-info__feedback">{{$_mock->cards->products[4]->feedback}}</div>
@@ -77,9 +83,11 @@
                 <div class="product-rectangle__wrapper">
                     <div class="rectangle__title">Выберите размер</div>
                     <div class="rectangle__select">
-                        <div class="select">
-                            <option selected value="1">205/55/r16 h</option>
-                        </div>
+                        <select data-placeholder="205/55/r16 h" class="select rectangle-select">
+                            @foreach ($_mock->rectangle_select->selects as $select)
+                            <option value="{{$select->price}}">{{$select->title}}</option>
+                            @endforeach
+                        </select>
                     </div>
         
                     <div class="flex__wrapper items--ct">
@@ -115,7 +123,7 @@
                     </div>   
                 <div class="product-price__wrapper">
                 <div class="product-info-prices">
-                        <div class="product-price">{{$_mock->cards->products[4]->price}} грн.</div>
+                        <div class="product-price"><span class="prise">{{$_mock->cards->products[4]->price}}</span> грн.</div>
                         @if ($_mock->cards->products[4]->old_price !== '')
                         <div class="product-discount">{{$_mock->cards->products[4]->old_price}} грн.</div>
                         @endif
@@ -297,7 +305,7 @@
                                         <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
                                     </svg>
                                 @endforeach --}}
-                                <span class="lol">
+                                <span class="stars__wrapper">
                                     @for ($i = 1; $i < 6; $i++)
                                         <svg class="stars__icon">
                                             <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>

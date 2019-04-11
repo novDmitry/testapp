@@ -5,6 +5,7 @@ import "select2"
 import wsTabs from 'wezom-standard-tabs'
 import "jquery-validation"
 import Inputmask from "inputmask"
+import "ion-rangeslider"
 
 $(function() {
     wsTabs.init();
@@ -51,9 +52,28 @@ $(function() {
         allowClear: true,
         minimumResultsForSearch: -1
     });
+
+
+  $( ".rectangle-select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str = $(this).val();
+    });
+    $( ".prise" ).text( str );
+  })
+  .change();
+
+    $('.rectangle-select').select2({
+      width: '100%',
+      height: '40px',
+    });
+
     $('.select').select2({
-        width: '100%',
-        height: '40px'
+      // data: data,
+      width: '100%',
+      height: '40px',
+
     });
 
 
@@ -141,6 +161,22 @@ $(function() {
          })
     
      });
+
+
+     $(".filter-range").ionRangeSlider({
+      skin: "round",
+      type: "double",
+      min: -100000,
+      max: 100000,
+      from: -100000,
+      to: 100000,
+      step: 10000,
+      grid: false,             // show/hide grid
+      force_edges: false,     // force UI in the box
+      hide_min_max: true,    // show/hide MIN and MAX labels
+      hide_from_to: true,    // show/hide FROM and TO labels
+      block: false            // block instance from changing
+  });
   
 
 });

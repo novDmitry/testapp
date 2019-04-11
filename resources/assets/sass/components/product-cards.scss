@@ -1358,15 +1358,21 @@ span.is-active {
 .hide {
     display: none;
 }
-.lol {
-    pos
+
+.star-active {
+    fill: #ffae00;
+}
+
+.stars__wrapper {
+    position: relative;
     .stars__icon {
         fill: gray;
-    
     }
 }
 
 .star-rating {
+    position: absolute;
+    top: -19px;
     font-size: 0;
     white-space: nowrap;
     display: inline-block;
@@ -1390,6 +1396,7 @@ span.is-active {
     background-size: contain;
   }
   .star-rating input {
+    cursor: pointer;
     -moz-appearance: none;
     -webkit-appearance: none;
     opacity: 0;
@@ -1406,13 +1413,13 @@ span.is-active {
     opacity: 1;
   }
   .star-rating span ~ span {
-    width: 40%;
+    width: 34px;
   }
   .star-rating span ~ span ~ span {
-    width: 60%;
+    width: 53px;
   }
   .star-rating span ~ span ~ span ~ span {
-    width: 80%;
+    width: 72px;
   }
   .star-rating span ~ span ~ span ~ span ~ span {
     width: 100%;
@@ -1427,10 +1434,14 @@ span.is-active {
     vertical-align: middle;
   }
   
-  .star-rating.star-5 {width: 75px;}
+  .star-rating.star-5 {
+    display: flex;
+    justify-content: space-between;
+    width: 91px;
+}
   .star-rating.star-5 input,
-  .star-rating.star-5 span {width: 15px;}
-  .star-rating.star-5 span ~ span  {width: 40%;}
-  .star-rating.star-5 span ~ span ~ span  {width: 60%;}
-  .star-rating.star-5 span ~ span ~ span ~ span {width: 80%;}
+  .star-rating.star-5 span {width: 15.5px; display: flex; justify-content: space-between;}
+  .star-rating.star-5 span ~ span  {width: 34px;}
+  .star-rating.star-5 span ~ span ~ span  {width: 53px;}
+  .star-rating.star-5 span ~ span ~ span ~ span {width: 72px;}
   .star-rating.star-5 span ~ span ~ span ~ span ~ span {width: 100%;}

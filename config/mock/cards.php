@@ -117,7 +117,7 @@ $cards = [
         [
             'title' => 'Шины Hankook Dynapro HP RA23 215/65 R16 98H 
             летняя резина',
-            'stars' => ['gold','gold','gold','gold','gold'],
+            'stars' => 4,
             'feedback' => 'Отзывы (10)',
             'info_lists' => ['Главная','Категории','Автомобильные шины','Шины Hankook Dynapro HP RA23 215/65...'],
             'model' => 'hankook',

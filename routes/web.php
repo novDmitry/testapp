@@ -23,6 +23,12 @@ Route::get('item', function () use ($_mock) {
         
     ]);
 });
+Route::get('catalog', function () use ($_mock) {
+    return view('catalog', [
+        '_mock' => $_mock,
+        
+    ]);
+});
 Route::get('second', function () {
     return view('second');
 });
