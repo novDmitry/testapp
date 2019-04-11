@@ -1,7 +1,7 @@
 <div class="product__wrapper">
     <div class="product-content__wrapper">
             <div class="product__img--big">
-            <img src="img/{{$_mock->cards->products[4]->img_big}}" alt="">
+            <img src="img/{{$_mock->cards->products[4]->img_big}}" alt="big">
             </div>
 
 
@@ -19,14 +19,14 @@
             <div class="product-info__title">{{$_mock->cards->products[4]->title}}</div>
 
             <div class="product__img--small">
-                <img src="img/{{$_mock->cards->products[4]->img_big}}" alt="">
+                <img src="img/{{$_mock->cards->products[4]->img_big}}" alt="big">
             </div>
         
             <div class="product-info-reting__wrapper">
         
                     <div class="product-tegs">
                             @foreach ($_mock->cards->products[4]->tegs as $teg)
-                            <img src="img/{{$teg}}">
+                            <img src="img/{{$teg}}" alt="tegs">
                             @endforeach
                         </div>
                 
@@ -58,9 +58,9 @@
         
                     <div class="product-model">
                         <div class="product-model__img">
-                                <img src="img/{{$_mock->cards->products[4]->model}}.png" alt="">
+                                <img src="img/{{$_mock->cards->products[4]->model}}.png" alt="model">
                         </div>
-                        <a href="" class="product_cards-all__link">
+                        <a href="#" class="product_cards-all__link">
                                 <div class="link__text">Другие модели Hankook</div>
                                 <svg class="link__icon">
                                     <use xlink:href="sprite.svg#sprite-right-arrow"></use>
@@ -78,7 +78,7 @@
                     <div class="rectangle__title">Выберите размер</div>
                     <div class="rectangle__select">
                         <div class="select">
-                            <option value="">205/55/r16 h</option>
+                            <option selected value="1">205/55/r16 h</option>
                         </div>
                     </div>
         
@@ -90,7 +90,7 @@
                                 <div class="product-quantity__title">Выберите кол-во:</div>
                                 <div class="product-quantity__select">
                                     <div class="select">
-                                        <option value="">4</option>
+                                        <option selected value="1">4</option>
                                     </div>
                                 </div>
                             </div>
@@ -103,13 +103,13 @@
                                 <svg class="product-tool__icon">
                                     <use xlink:href="sprite.svg#sprite-compare2"></use>
                                 </svg>
-                                <a href="" class="product-tool__link">Сравнить товар</a>
+                                <a href="#" class="product-tool__link">Сравнить товар</a>
                             </span>
                             <span class="product-tool">
                                 <svg class="product-tool__icon">
                                     <use xlink:href="sprite.svg#sprite-favourite2"></use>
                                 </svg>
-                                <a href="" class="product-tool__link">В избранное</a>
+                                <a href="#" class="product-tool__link">В избранное</a>
                             </span>
                         </div>
                     </div>   
@@ -178,9 +178,9 @@
 
             @foreach ($_mock->cards->products[4]->detail_tabs as $tab)
                 
-        <div class="product-detail-nav__tab" data-wstabs-ns="group-t" data-wstabs-button="{{$tab->data}}">
+        <span class="product-detail-nav__tab {{$tab->active}}" data-wstabs-ns="group-t" data-wstabs-button="{{$tab->data}}">
                    {{$tab->title}} 
-        </div>
+        </span>
 
             @endforeach
 
@@ -195,7 +195,7 @@
 
             <div class="product-detail-description__wrapper">
                 <div class="product-detail-description__img">
-                    <img src="img/description.jpg" alt="">
+                    <img src="img/description.jpg" alt="detail">
                 </div>
                 <div class="product-detail-description__text-wrapper">
                 <div class="product-detail-description__text">Следующий ключевой момент – это сезонность покрышек. Если вам кажется, что опираться тут следует только на наступившее время года, вы сильно заблуждаетесь. Сложности возникают и здесь. К примеру, с тем, стоит ли приобретать резину в Херсоне, которая рассчитана на круглогодичное использование, то есть, демисезонные покрышки. Или же отдать предпочтение отдельно зимним и летним шинам.
@@ -224,8 +224,8 @@
                     <div class="product-offer__row product-offer__row-title">{{$product->title}}</div>
                     <div class="product-offer__row product-offer__row-size">{{$product->size}}</div>
                     <div class="product-offer__row product-offer__row-index">{{$product->index}}</div>
-                    <div class="product-offer__row product-offer__row-quantity"><div class="box">{{$product->quantity}}</div>шт</div>
-                    <div class="product-offer__row product-offer__row-price">{{$product->price}}грн.</div>
+                    <div class="product-offer__row product-offer__row-quantity"><input type="number" class="box" max="24" min="1" value="{{$product->quantity}}">шт.</div>
+                    <div class="product-offer__row product-offer__row-price"><span class="price">{{$product->price}}</span>грн.</div>
                     <div class="product-offer__row product-offer__row-button">
 
                         <button class="button product-buy">
@@ -276,33 +276,81 @@
             </div>
 
             <div class="product-feedback__form-wrapper">
-                <form action="" class="product-feedback__form">
+                <form action="#" class="product-feedback__form">
                     <div class="product-feedback__form-title">Оставить отзыв</div>
                     <div class="product-feedback-info-user__wrapper">
                         <div class="field__wrap">
-                            <label for="">Ваше имя
-                                <input type="text"  class="product-feedback__input">
+                            <label>Ваше имя
+                                <input type="text" name="text" required data-rule-minlength="1" data-msg="Это поле необходимо заполнить." data-msg-minlength="Пожалуйста, введите не меньше {0} символов." class="product-feedback__input">
                             </label>
                         </div>
                         <div class="field__wrap">
-                            <label for="">Ваше Email
-                                <input type="email"  class="product-feedback__input">
+                            <label>Ваше Email
+                                <input type="email" name='email' required data-msg="Это поле необходимо заполнить." data-msg-email="Пожалуйста, введите корректный адрес электронной почты." class="product-feedback__input">
                             </label>
                         </div>
                         <div class="product-feedback-grade__wrap">
                             <div class="product-feedback-grade__title">Оценка товара</div>
                             <div class="product-feedback-stars">
-                                @foreach ($_mock->feedback->feedbacks[0]->stars as $star)
+                                {{-- @foreach ($_mock->feedback->feedbacks[0]->stars as $star)
                                 <svg class="stars__icon">
                                         <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
                                     </svg>
-                                @endforeach
+                                @endforeach --}}
+                                <span class="lol">
+                                    @for ($i = 1; $i < 6; $i++)
+                                        <svg class="stars__icon">
+                                            <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                        </svg>
+                                    @endfor
+                                <span class="star-rating star-5">
+                                        <input type="radio" name="rating" value="1">
+                                        <span>
+                                            <svg class="stars__icon">
+                                                <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                            </svg>
+                                        </span>
+                                        <input type="radio" name="rating" value="2">
+                                        <span>
+                                            @for ($i = 1; $i < 3; $i++)
+                                                <svg class="stars__icon">
+                                                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                                </svg>
+                                            @endfor
+                                        </span>
+                                        
+                                        <input type="radio" name="rating" value="3">
+                                        <span>
+                                            @for ($i = 1; $i < 4; $i++)
+                                                <svg class="stars__icon">
+                                                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                                </svg>
+                                            @endfor
+                                        </span>
+                                        <input type="radio" name="rating" value="4">
+                                        <span>
+                                            @for ($i = 1; $i < 5; $i++)
+                                                <svg class="stars__icon">
+                                                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                                </svg>
+                                            @endfor
+                                        </span>
+                                        <input type="radio" name="rating" value="5">
+                                        <span>
+                                            @for ($i = 1; $i < 6; $i++)
+                                                <svg class="stars__icon">
+                                                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+                                                </svg>
+                                            @endfor
+                                        </span>
+                                      </span>
+                                    </span>
                             </div>
                         </div>
                     </div>
 
                     <div class="product-feedback__text-input-wrapper">
-                        <label for="">Ваш отзыв
+                        <label>Ваш отзыв
                             <textarea class="product-feedback__textarea"></textarea>
                         </label>
                     </div>
@@ -337,7 +385,7 @@
 
             <div class="product-cards__title-wrap">
             <div class="product-cards__title">Похожие товары</div>
-                <a href="" class="product_cards-all__link">
+                <a href="#" class="product_cards-all__link">
                     <div class="link__text">Ссылка в каталог</div>
                     <svg class="link__icon">
                         <use xlink:href="sprite.svg#sprite-right-arrow"></use>

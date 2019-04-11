@@ -5051,7 +5051,7 @@ img.mfp-img {
 }
 
 .header-popup__button {
-  height: 52px;
+  height: 50px;
   font-size: 12px;
   max-width: 124px;
   width: 100%;
@@ -5108,17 +5108,15 @@ img.mfp-img {
 
 @media (min-width: 320px) {
   .second-header-wrapper {
-    max-width: 250px;
+    border-top: 1px solid #acacac;
     justify-content: center;
     padding-top: 5px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
   }
 }
 
 @media (min-width: 800px) {
   .second-header-wrapper {
+    border: none;
     max-width: 1360px;
     padding-top: 37px;
     position: relative;
@@ -5667,6 +5665,14 @@ img.mfp-img {
   }
 }
 
+.menu-category__links-list {
+  margin: 0;
+  position: absolute;
+  width: 320px;
+  padding: 0px;
+  background-color: #fff;
+}
+
 .menu-category__links {
   display: none;
   margin: 0;
@@ -5684,6 +5690,10 @@ img.mfp-img {
 
 .menu-category__links a:first-child .menu-category__link {
   padding-top: 10px;
+}
+
+.add-links {
+  display: block;
 }
 
 .menu-category__link {
@@ -6107,8 +6117,6 @@ img.mfp-img {
   justify-content: space-between;
   align-items: center;
   padding-top: 9px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .product-cards__title {
@@ -6303,7 +6311,7 @@ img.mfp-img {
 
 .product-cards__items .product-cards__item .info-preview {
   margin-top: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   display: flex;
 }
 
@@ -6605,14 +6613,21 @@ img.mfp-img {
 
 @media (min-width: 800px) {
   .product-info-prices .product-discount:before {
-    top: 7px;
-    width: 82px;
+    top: 9px;
+    width: 100px;
   }
 }
 
 .product-buy__wrapper {
   align-items: center;
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .product-buy__wrapper {
+    flex-direction: row;
+  }
 }
 
 .product-buy__wrapper .box__wrap {
@@ -6620,7 +6635,14 @@ img.mfp-img {
   align-items: center;
   font-size: 14px;
   color: #3b3b3b;
-  margin-right: 23px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 800px) {
+  .product-buy__wrapper .box__wrap {
+    margin-bottom: 0;
+  }
 }
 
 .product-buy__wrapper .box__wrap .box {
@@ -6632,6 +6654,8 @@ img.mfp-img {
   background-color: #f0f0f0;
   text-align: center;
   color: #9c9c9c;
+  border: none;
+  padding: 0;
 }
 
 .product-buy {
@@ -6766,6 +6790,10 @@ img.mfp-img {
 }
 
 .product-info__list .product-info__link {
+  max-width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 9px;
   font-weight: normal;
   color: #000;
@@ -6784,6 +6812,10 @@ img.mfp-img {
   height: 1px;
   border: none;
   background-color: #ff9300;
+}
+
+.product-info__list:last-child hr {
+  display: none;
 }
 
 .product-info__title {
@@ -6823,9 +6855,15 @@ img.mfp-img {
   margin-bottom: 9px;
 }
 
+.product-tegs img {
+  margin-left: -5px;
+  margin-right: -10px;
+}
+
 .product-info-reting__wrapper {
   display: flex;
   margin: auto;
+  margin-top: 5px;
   margin-bottom: 20px;
   flex-wrap: wrap;
   flex-direction: column;
@@ -7067,9 +7105,22 @@ img.mfp-img {
 .product-detail-nav__tabs {
   overflow: scroll;
   display: flex;
+  position: relative;
+}
+
+.product-detail-nav__tabs::before {
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  z-index: -1;
 }
 
 .product-detail-nav__tab {
+  white-space: nowrap;
   margin-right: 24px;
   padding: 0 11px;
   height: 35px;
@@ -7078,6 +7129,10 @@ img.mfp-img {
   color: #acacac;
   cursor: pointer;
   margin-bottom: 32px;
+}
+
+span.is-active {
+  border-bottom: 1px solid #ffc925;
 }
 
 .product-detail-description__wrapper {
@@ -7267,12 +7322,15 @@ img.mfp-img {
 }
 
 .product-offer__row-quantity .box {
+  color: #9c9c9c;
+  font-size: 18px;
   line-height: 50px;
   text-align: center;
   width: 60px;
   height: 50px;
   background-color: #f0f0f0;
   margin-right: 6px;
+  border: none;
 }
 
 .product-offer__row-price {
@@ -7399,6 +7457,12 @@ img.mfp-img {
   flex-direction: column;
 }
 
+.product-feedback-info-user__wrapper .field__wrap label.error {
+  font-size: 12px;
+  background-color: #fff;
+  color: #ea4335;
+}
+
 .product-feedback-info-user__wrapper .field__wrap .product-feedback__input {
   width: 100%;
   max-width: 198px;
@@ -7478,6 +7542,104 @@ img.mfp-img {
 
 .hide {
   display: none;
+}
+
+.lol pos .stars__icon {
+  fill: gray;
+}
+
+.star-rating {
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  /* width: 250px; remove this */
+  height: 15px;
+  overflow: hidden;
+  position: relative;
+  background-size: contain;
+}
+
+.star-rating .stars__icon {
+  fill: #ffae00;
+}
+
+.star-rating span {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+  background-size: contain;
+}
+
+.star-rating input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  /* width: 20%; remove this */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.star-rating input:hover + span,
+.star-rating input:checked + span {
+  opacity: 1;
+}
+
+.star-rating span ~ span {
+  width: 40%;
+}
+
+.star-rating span ~ span ~ span {
+  width: 60%;
+}
+
+.star-rating span ~ span ~ span ~ span {
+  width: 80%;
+}
+
+.star-rating span ~ span ~ span ~ span ~ span {
+  width: 100%;
+}
+
+::after,
+::before {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.star-rating.star-5 {
+  width: 75px;
+}
+
+.star-rating.star-5 input,
+.star-rating.star-5 span {
+  width: 15px;
+}
+
+.star-rating.star-5 span ~ span {
+  width: 40%;
+}
+
+.star-rating.star-5 span ~ span ~ span {
+  width: 60%;
+}
+
+.star-rating.star-5 span ~ span ~ span ~ span {
+  width: 80%;
+}
+
+.star-rating.star-5 span ~ span ~ span ~ span ~ span {
+  width: 100%;
 }
 
 .footer__wrapper {
@@ -7894,6 +8056,12 @@ svg path {
   /* for vertical scrollbars */
   height: 1px;
   /* for horizontal scrollbars */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .wrapper {

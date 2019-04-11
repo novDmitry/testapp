@@ -88,6 +88,14 @@
     }
 }
 
+.menu-category__links-list {
+    margin: 0;
+    position: absolute;
+    width: 320px;
+    padding: 0px;
+    background-color: #fff;
+}
+
 .menu-category__links {
     display: none;
     margin: 0;
@@ -106,6 +114,10 @@
         }
         
     }
+}
+
+.add-links {
+    display: block;
 }
 
 .menu-category__link {

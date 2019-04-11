@@ -48,7 +48,8 @@ $(function() {
 
     $('.category-selector').select2({
         placeholder: "Все категории",
-        allowClear: true
+        allowClear: true,
+        minimumResultsForSearch: -1
     });
     $('.select').select2({
         width: '100%',
@@ -104,5 +105,42 @@ $(function() {
     });
 
   // });
+
+    // $('#menu-category__button').click(function() {
+    //   $('.menu-category__links').addClass('add-links')
+    // })
+
+
+    $('#menu-category__button').click(function(){
+      if($('.menu-category__links').hasClass('add-links')) {
+        $('.menu-category__links').removeClass('add-links');
+      }
+      else {
+        $('.menu-category__links').addClass('add-links');
+      }
+    })
+
+
+    $('.product-offer .price').each(function() {
+      let curIndex = $('.price').index(this);
+      var currentPrice = parseInt($('.price').eq(curIndex).text().replace(/\s/g, ''));
+    
+      
+        $('.box').eq(curIndex).change(function() {
+          var multiplier = $(this).val();
+          var newPrice = currentPrice * multiplier;
+
+          if($(this).val() > parseInt($(this).attr('max'))) {
+            $(this).val($(this).attr('max'))
+          }
+          else if($(this).val() < parseInt($(this).attr('min'))) {
+            $(this).val($(this).attr('min'))
+          }else {
+            $('.price').eq(curIndex).text(newPrice);
+          }
+         })
+    
+     });
+  
 
 });

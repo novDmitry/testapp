@@ -26,7 +26,7 @@ $cards = [
             'old_price' => '1250',
             'size' => '155/65 К15',
             'index' => '72T',
-            'quantity' => '4',
+            'quantity' => '1',
         ],
 
         [
@@ -49,7 +49,7 @@ $cards = [
             'old_price' => '1250',
             'size' => '155/65 К15',
             'index' => '72T',
-            'quantity' => '4',
+            'quantity' => '1',
         ],
 
         [
@@ -76,7 +76,7 @@ $cards = [
             'old_price' => '11 250',
             'size' => '155/65 К15',
             'index' => '72T',
-            'quantity' => '4',
+            'quantity' => '1',
         ],
 
         [
@@ -99,7 +99,7 @@ $cards = [
             'old_price' => '',
             'size' => '155/65 К15',
             'index' => '72T',
-            'quantity' => '4',
+            'quantity' => '1',
         ],
 
 
@@ -142,7 +142,7 @@ $cards = [
             'old_price' => '11 250',
             'size' => '155/65 К15',
             'index' => '72T',
-            'quantity' => '4',
+            'quantity' => '1',
             'service' => [
                 [
                     'icon' => 'uk',
@@ -185,23 +185,28 @@ $cards = [
             'detail_tabs' => [
                 [
                     'title' => 'Описание товара',
-                    'data' => '1'
+                    'data' => '1',
+                    'active' => 'is-active'
                 ],
                 [
                     'title' => 'Предложение',
-                    'data' => '2'
+                    'data' => '2',
+                    'active' => ''
                 ],
                 [
                     'title' => 'Отзывы',
-                    'data' => '3'
+                    'data' => '3',
+                    'active' => ''
                 ],
                 [
                     'title' => 'Гарантия',
-                    'data' => '4'
+                    'data' => '4',
+                    'active' => ''
                 ],
                 [
                     'title' => 'Сертификат',
-                    'data' => '5'
+                    'data' => '5',
+                    'active' => ''
                 ]
             ],
 

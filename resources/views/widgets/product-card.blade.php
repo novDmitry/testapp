@@ -28,13 +28,13 @@
             @endforeach
         </div>
         <div class="preview__img">
-            <img src="img/{{$product->img}}" alt="">
+            <img src="img/{{$product->img}}" alt="prev">
         </div>
     </div>
 
     <div class="product__tegs">
         @foreach ($product->tegs as $teg)
-        <img src="img/{{$teg}}" alt=""> 
+        <img src="img/{{$teg}}" alt="tegs"> 
         @endforeach
     </div>
     <div class="product-prices">
@@ -46,7 +46,7 @@
 
     <div class="product-buy__wrapper">
     <div class="wrap {{$active}}">
-    <div class="box__wrap"><div class="box">{{$product->quantity}} </div>шт.</div></div>
+    <div class="box__wrap"><input type="number" value="4" class="box">шт.</div></div>
     
         <button class="button product-buy">
                 <svg class="product-buy__icon">
@@ -61,13 +61,13 @@
             <svg class="product-tool__icon">
                 <use xlink:href="sprite.svg#sprite-compare2"></use>
             </svg>
-            <a href="" class="product-tool__link">Сравнить товар</a>
+            <a href="#" class="product-tool__link">Сравнить товар</a>
         </span>
         <span class="product-tool">
             <svg class="product-tool__icon">
                 <use xlink:href="sprite.svg#sprite-favourite2"></use>
             </svg>
-            <a href="" class="product-tool__link">В избранное</a>
+            <a href="#" class="product-tool__link">В избранное</a>
         </span>
     </div>
 </div>

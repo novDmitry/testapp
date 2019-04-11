@@ -41,6 +41,8 @@
     }
 }
 
+
+
 .header-nav {
     font-size: 12px;
     display: flex;
@@ -139,7 +141,7 @@
 .header-popup {
 
     &__button {
-        height: 52px;
+        height: 50px;
         font-size: 12px;
         max-width: 124px;
         width: 100%;
@@ -187,14 +189,13 @@
     bottom: 0px;
 
     @include sm {
-        max-width: 250px;
+        border-top: 1px solid #acacac;
         justify-content: center;
         padding-top: 5px;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     @include md {
+        border: none;
         max-width: 1360px;
         padding-top: 37px;
         position: relative;

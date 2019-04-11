@@ -1,4 +1,4 @@
-<form action="" class="search__form">
+<form action="#" class="search__form">
         <div class="search__block">
             <input type="search" placeholder="Поиск по сайту" data-rule-minlength="2" data-msg-minlength="Введите больше одного символа" name="search" class="top-search__input">
             <select class="category-selector" name="state"></select>

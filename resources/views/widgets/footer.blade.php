@@ -10,7 +10,7 @@
                         <h2 class="footer-subscribe__title">Будьте в курсе новостей и новинок!</h2>
                         <h1 class="footer-subscribe__title">Подписывайтесь на рассылку</h1>
                         <div class="footer-subscribe__input-wrap">
-                            <form action="" id="footer-subscribe" class="footer-subscribe__input-wrap">
+                            <form action="#" id="footer-subscribe" class="footer-subscribe__input-wrap">
                                 <input type="email" name="email" data-msg="Это поле необходимо заполнить." data-msg-email="Пожалуйста, введите корректный адрес электронной почты." required class="footer-subscribe__input" placeholder="Укажите свой email для подписки">
                                 <button data-mfp-src="#subscribe" class="button popup-open__sub footer-subscribe__button"><div class="subscribe__text">Подписаться</div> 
                                         <svg class="subscribe__icon">
@@ -26,7 +26,7 @@
                     <div class="title">Блок {{$footer_item->title}}</div>
                     <hr class="line">
                     @foreach ($footer_item->link as $links)
-                    <a href="" class="footer__link">Ccылка {{$links}}</a>
+                    <a href="#" class="footer__link">Ccылка {{$links}}</a>
                     @endforeach
             </div>
             @endif       

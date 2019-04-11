@@ -14012,7 +14012,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.category-selector').select2({
     placeholder: "Все категории",
-    allowClear: true
+    allowClear: true,
+    minimumResultsForSearch: -1
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select').select2({
     width: '100%',
@@ -14057,6 +14058,33 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
       $icon.removeClass("is-active");
     }, 5);
   }); // });
+  // $('#menu-category__button').click(function() {
+  //   $('.menu-category__links').addClass('add-links')
+  // })
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-category__button').click(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').hasClass('add-links')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').removeClass('add-links');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').addClass('add-links');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-offer .price').each(function () {
+    var curIndex = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').index(this);
+    var currentPrice = parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text().replace(/\s/g, ''));
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.box').eq(curIndex).change(function () {
+      var multiplier = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val();
+      var newPrice = currentPrice * multiplier;
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() > parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'))) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'));
+      } else if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() < parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'))) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'));
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text(newPrice);
+      }
+    });
+  });
 });
 
 /***/ }),
