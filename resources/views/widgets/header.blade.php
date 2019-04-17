@@ -124,12 +124,13 @@
                 </svg>
                 <div class="header__option-title">избранное</div>
             </div>
-            <div class="header__option">
+            <div data-mfp-src="#popup-basket" class=" popup-open header__option">
                 <svg class="header__option header__option-icon">
                     <use xlink:href="sprite.svg#sprite-cart"></use>
                 </svg>
-                <div class="header__option-title">корзина</div>
+                <div class="header__option-title ">корзина</div>
             </div>
+            @include('widgets/popup-basket')
         </div>
     </div>
 </div>

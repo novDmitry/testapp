@@ -1,6 +1,6 @@
-<div class="popup-wrapper mfp-hide" id="popup-wrapper">
+<div class="popup-wrapper zoom-anim-dialog mfp-hide" id="popup-wrapper">
     <div class="popup-enter popup-enter__wrapper">
-        <div class="title">Вход в личный кабинет</div>
+        <div class="popup__title">Вход в личный кабинет</div>
         <form action="#" class="popup-entert__form">
             <div class="field-wrap">
                 <label  class="field__title">
@@ -30,7 +30,7 @@
     </div>
     <div class="popup__line--gray"></div>
     <div class="popup-enter popup-enter__social">
-        <div class="title">Войти с помощью</div>
+        <div class="popup__title">Войти с помощью</div>
         <div class="popup-enter__social-button-items">
             <button class="popup-enter__social-button-item button button--blue">
                 <svg style="width: 9px; height: 12px" class="svg-social">
@@ -50,9 +50,9 @@
         </div>
     </div>
 </div>
-<div class="popup-wrapper mfp-hide popup-callback__wrap" id="popup-callback">
+<div class="popup-wrapper zoom-anim-dialog mfp-hide popup-callback__wrap" id="popup-callback">
     <div class="popup-enter popup-enter__wrapper">
-        <div class="title">Перезвони мне</div>
+        <div class="popup__title">Перезвони мне</div>
         <form action="#" class="popup-entert__form">
             <div class="field-wrap">
                 <label class="field__title">
@@ -71,7 +71,7 @@
         </form>
     </div>
 </div>
-<div class="popup-subscribe mfp-hide" id="subscribe">
+<div class="popup-subscribe zoom-anim-dialog mfp-hide" id="subscribe">
     <div class="popup-subscribe__wrap">
         <div class="title">Вы успешно подписанны на рассылку!</div>
     </div>

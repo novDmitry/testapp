@@ -3,8 +3,9 @@
 $cards = [
     'products' => [
         [
+            'index' => 1,
             'title' => 'Антифриз Fosser Antifreeze FA 12 Readymix 1 л Concentrat, Germany',
-            'stars' => ['gold','gold','gold','gold','gold'],
+            'stars' => 1,
             'feedback' => 'Отзывы (10)',
             'info' => [
                 [
@@ -22,7 +23,22 @@ $cards = [
             ],
             'img' => 'product1.png',
             'tegs' => ['new.png','top.png','disc.png'],
-            'price' => '599',
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '570',
+                    'old_price' => '650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
             'old_price' => '1250',
             'size' => '155/65 К15',
             'index' => '72T',
@@ -30,8 +46,9 @@ $cards = [
         ],
 
         [
+            'index' => 2,
             'title' => 'Антифриз Fosser Antifreeze FA 12 Readymix 1 л Concentrat, Germany',
-            'stars' => ['gold','gold','gold','gray','gray'],
+            'stars' => 2,
             'feedback' => 'Отзывы (10)',
             'info' => [
                 [
@@ -45,7 +62,22 @@ $cards = [
             ],
             'img' => 'product2.png',
             'tegs' => ['new.png','top.png'],
-            'price' => '599',
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '570',
+                    'old_price' => '650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
             'old_price' => '1250',
             'size' => '155/65 К15',
             'index' => '72T',
@@ -53,8 +85,9 @@ $cards = [
         ],
 
         [
+            'index' => 3,
             'title' => 'Антифриз Fosser Antifreeze FA 12 Readymix 1 л Concentrat, Germany',
-            'stars' => ['gray','gray','gray','gray','gray'],
+            'stars' => 5,
             'feedback' => 'Без отзывов',
             'info' => [
                 [
@@ -72,7 +105,22 @@ $cards = [
             ],
             'img' => 'product3.png',
             'tegs' => ['new.png'],
-            'price' => '9 570',
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '570',
+                    'old_price' => '650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
             'old_price' => '11 250',
             'size' => '155/65 К15',
             'index' => '72T',
@@ -80,8 +128,9 @@ $cards = [
         ],
 
         [
-            'title' => 'Антифриз Fosser Antifreeze',
-            'stars' => ['gold','gold','gold','gold','gold'],
+            'index' => 4,
+            'title' => 'Антифриз Fosser Antifreeze FA 12 Readymix 1 л Concentrat, Germany',
+            'stars' => 3,
             'feedback' => 'Отзывы(10)',
             'info' => [
                 [
@@ -95,26 +144,30 @@ $cards = [
             ],
             'img' => 'product4.png',
             'tegs' => [],
-            'price' => '599',
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '570',
+                    'old_price' => '650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
             'old_price' => '',
             'size' => '155/65 К15',
             'index' => '72T',
             'quantity' => '1',
         ],
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
         [
+            'index' => 5,
             'title' => 'Шины Hankook Dynapro HP RA23 215/65 R16 98H 
             летняя резина',
             'stars' => 4,
@@ -135,11 +188,25 @@ $cards = [
                     'title' => 'новая'
                 ],
             ],
-            'img' => 'product1.png',
+            'img' => 'product3.png',
             'img_big' => 'product5-big.png',
             'tegs' => ['new.png','top.png','disc.png'],
-            'price' => '9 499',
-            'old_price' => '11 250',
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '9 570',
+                    'old_price' => '11 650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
             'size' => '155/65 К15',
             'index' => '72T',
             'quantity' => '1',
@@ -218,6 +285,45 @@ $cards = [
             'Если дефект становится очевидным позднее, чем за 2 года с даты продажи, вы получите возмещение части затрат в зависимости от износа шин или средств на покупку новых шин производителя.'
             ]
         ],
+        [
+            'index' => 6,
+            'title' => 'Антифриз Fosser Antifreeze FA 12 Readymix 1 л Concentrat, Germany',
+            'stars' => 2,
+            'feedback' => 'Отзывы(10)',
+            'info' => [
+                [
+                    'icon' => 'summer',
+                    'title' => 'летняя'
+                ],
+                [
+                    'icon' => 'passenger-car',
+                    'title' => 'легковая'
+                ]
+            ],
+            'img' => 'product4.png',
+            'tegs' => [],
+            'prices' => [
+                [
+                    'size' => '205 / 55 / R16 H',
+                    'price' => '570',
+                    'old_price' => '650',
+                    'quantity' => '24',
+                    'data' => 1
+                ],
+                [
+                    'size' => '205 / 55 / R18 H',
+                    'price' => '10 570',
+                    'old_price' => '',
+                    'quantity' => '',
+                    'data' => 2
+                ],
+            ],
+            'old_price' => '',
+            'size' => '155/65 К15',
+            'index' => '72T',
+            'quantity' => '1',
+        ],
+        
     ]
 ];
 

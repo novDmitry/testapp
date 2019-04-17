@@ -1,4 +1,4 @@
-<div class="filter__wrapper">
+<div class="filter__wrapper-select">
         <div class="filter-options__links">
             @foreach ($_mock->filter_options->filter_title as $filter_titles)
                 @if ($filter_titles == $_mock->filter_options->filter_title[0])

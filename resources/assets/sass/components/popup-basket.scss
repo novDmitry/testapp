@@ -1,0 +1,241 @@
+.popup-wrap {
+    background-color: #fff;
+    width: auto;
+    max-width: 920px;
+    padding: 30px 20px;
+    position: relative;
+    margin: auto;
+}
+
+.popup-basket__wrapper {
+    width: 100%;
+    .mfp-close {
+        right: -44px;
+    }
+}
+
+.popup-basket__items {
+    margin-top: 36px;
+}
+
+.popup-basket__item {       
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &:first-child {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+    &:last-child {
+        padding-bottom: 0;
+        padding-top: 40px;
+        border-bottom: 0px solid #000;
+    }
+
+    .popup-basket-price {
+        margin-top: 10px;
+        font-size: 30px;
+        width: 170px;
+
+        @include md {
+            margin-top: 0;
+        }
+    }
+}
+
+.popup-basket__icon {
+    cursor: pointer;
+    &:active {
+        transform: scale(1.1)
+    }
+}
+
+.popup-basket__icon--del {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 8px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: #c41d1d;
+        transform: rotate(45deg)
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        top: 8px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: #c41d1d;
+        transform: rotate(-45deg)
+        
+    }
+}
+
+.popup-basket__img--small {
+    margin-left: 22px;
+    margin-right: 22px;
+    width: 90px;
+    height: 90px;
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.popup-basket__title {
+    max-width: 300px;
+    width: 100%;
+    color: #3b3b3b;
+    margin-right: 45px;
+    .popup-basket__text {
+        font-weight: normal;    
+        font-size: 17px;
+        text-decoration: underline;
+    }
+}
+
+.popup-basket-price--one {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    color: #3b3b3b;
+    margin-top: 14px;
+    .popup-basket-price {
+        white-space: nowrap;
+        font-size: 19px;
+        margin: 0;
+    }
+}
+
+.popup-basket-price {
+    color: #3b3b3b;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.popup-basket__icon--min {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 8px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: #8c8c8c;
+    }
+}
+
+
+
+.popup-basket__counter {
+    width: 157px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    @include md {
+        margin-top: 0;
+        margin-right: 90px;
+    }
+}
+
+.popup-basket__count {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #9c9c9c;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 0px;
+}
+
+.popup-basket__icon--pls {
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 8px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: #ff9500;
+
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        top: 8px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: #ff9500;
+        transform: rotate(90deg)
+        
+    }
+}
+
+.popup-basket-chekout__wrapper {
+    margin-top: 83px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+
+    .continue__link {
+        color: #000000;
+        font-size: 14px;
+    }
+}
+
+.popup-basket-price__wrapper {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fffedb;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    @include md {
+    margin: 0;
+    margin-left: 55px;
+    width: max-content;
+    padding: 0 40px;
+    }
+    .popup-basket-price {
+        font-size: 30px;
+    }
+}
+
+.popup-basket-price__title {
+    font-size: 14px;
+    font-weight: normal;
+    color: #363636;
+    margin-right: 33px;
+}
+
+.popup-basket-buy {
+    width: 210px;
+}

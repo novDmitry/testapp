@@ -4,7 +4,7 @@
             @foreach ($_mock->footer->footer_items as $footer_item)
             @if ($footer_item == $_mock->footer->footer_items[0])
             <div class="footer__item">
-            <div class="title">Блок {{$footer_item->title}}</div>
+            <div class="footer__list-title">Блок {{$footer_item->title}}</div>
                     <hr class="line">
                     <div class="footer-subscribe__wrap">
                         <h2 class="footer-subscribe__title">Будьте в курсе новостей и новинок!</h2>
@@ -23,7 +23,7 @@
                 </div>
             @else
             <div class="footer__item dt">
-                    <div class="title">Блок {{$footer_item->title}}</div>
+                    <div class="footer__list-title">Блок {{$footer_item->title}}</div>
                     <hr class="line">
                     @foreach ($footer_item->link as $links)
                     <a href="#" class="footer__link">Ccылка {{$links}}</a>

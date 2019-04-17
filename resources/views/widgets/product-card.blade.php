@@ -1,16 +1,22 @@
 <div class="product-cards__item">
             
     <div class="marks">
-    <div class="mark">{{$mark}}</div>
+    <div class="mark">Fosser</div>
     </div>   
     <div class="title">{{$product->title}}</div>
     <div class="product-reting">
         <div class="product__stars">
-            @foreach ($product->stars as $star)
-            <svg class="stars__icon">
-                    <use xlink:href="sprite.svg#sprite-star-{{$star}}"></use>
+            @for ($i = 1; $i < 6; $i++)
+            @if ($i < $product->stars + 1)
+            <svg class="stars__icon star-active">
+                    <use xlink:href="sprite.svg#sprite-star-gold"></use>
                 </svg>
-            @endforeach
+            @else
+            <svg class="stars__icon ">
+                    <use xlink:href="sprite.svg#sprite-star-gold"></use>
+                </svg>
+            @endif
+            @endfor
         </div>
         <div class="product__feedback">{{$product->feedback}}</div>
         <div class="product-quantity">В наличии: 24 шт.</div>
@@ -38,14 +44,14 @@
         @endforeach
     </div>
     <div class="product-prices">
-        <div class="product-price">{{$product->price}} грн.</div>
-        @if ($product->old_price !== '')
-        <div class="product-discount">{{$product->old_price}} грн.</div>
+        <div class="product-price">{{$product->prices[0]->price}} грн.</div>
+        @if ($product->prices[0]->old_price !== '')
+        <div class="product-discount">{{$product->prices[0]->old_price}} грн.</div>
         @endif
     </div>
 
     <div class="product-buy__wrapper">
-    <div class="wrap {{$active}}">
+    <div class="wrap">
     <div class="box__wrap"><input type="number" value="4" class="box">шт.</div></div>
     
         <button class="button product-buy">

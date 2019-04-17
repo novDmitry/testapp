@@ -86,88 +86,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/custom-jquery-methods/fn/get-my-elements.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/custom-jquery-methods/fn/get-my-elements.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function () {
-	'use strict';
-	/**
-	 * Search on the page or retrieve from the date of the desired item.
-	 *
-	 * First, look at the date object on a certain property.
-	 * If it is empty - look for the element on the specified selector in the given direction.
-	 * When found, write it in the date object to
-	 * at subsequent calls - we get from the date, faster and without searching.
-	 *
-	 * ___!!! If called element more then one,___
-	 * ___then the method is performed only for the first___
-	 *
-	 * @example <caption>Find / retrieve nested items</caption>
-	 * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
-	 *
-	 * @example <caption>Find / retrieve nested items only in context block</caption>
-	 * let $context = $('.demo');
-	 * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', $context);
-	 *
-	 * @example <caption>Finding / getting the parent element</caption>
-	 * let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
-	 *
-	 * @example <caption>Search / retrieve similar items except for the current one</caption>
-	 * let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
-	 *
-	 * @param {string} dataKey - the property key from the data object of the element
-	 * @param {JQuery.Selector} selector - search selector
-	 * @param {string|JQuery} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
-	 * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
-	 *
-	 * @name getMyElements
-	 * @param {string} dataKey
-	 * @param {string} selector
-	 * @param {string|jQuery} [direction='document']
-	 * @param {boolean} [direction='document']
-	 * @return {jQuery}
-	 * @sourceCode
-	 */
-	jQuery.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
-		/** @type {jQuery} */
-		const $element = this.eq(0);
-		const keyIsSelector = (typeof dataKey === 'string');
-		let $target = keyIsSelector ? $element.data(dataKey) : null;
-
-		if (!$target) {
-			if (direction === 'document' || (direction && direction.jquery)) {
-				if (direction.jquery) {
-					$target = direction.find(selector);
-				} else {
-					$target = jQuery(selector);
-				}
-				if ($target.length && notSelf) {
-					$target = $target.not($element);
-				}
-			} else {
-				$target = $element[direction](selector);
-			}
-			$element.data(dataKey, $target);
-		}
-
-		if (!$target.length) {
-			$element.data(dataKey, null);
-		}
-
-		return $target;
-	};
-})();
-
-
-/***/ }),
-
-/***/ "./node_modules/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js":
 /*!*****************************************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js ***!
   \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -182,7 +103,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ../global/window */ "./node_modules/inputmask/dist/inputmask/global/window.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ../global/window */ "./node_modules/Inputmask/dist/inputmask/global/window.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -475,9 +396,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/dist/inputmask/global/window.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/global/window.js":
 /*!****************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/global/window.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/global/window.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -497,9 +418,9 @@ if (true) !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/dist/inputmask/inputmask.date.extensions.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/inputmask.date.extensions.js":
 /*!****************************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/inputmask.date.extensions.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/inputmask.date.extensions.js ***!
   \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -514,7 +435,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/Inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -758,9 +679,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/dist/inputmask/inputmask.extensions.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/inputmask.extensions.js":
 /*!***********************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/inputmask.extensions.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/inputmask.extensions.js ***!
   \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -775,7 +696,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/Inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -864,9 +785,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/dist/inputmask/inputmask.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/inputmask.js":
 /*!************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/inputmask.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/inputmask.js ***!
   \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -881,7 +802,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./dependencyLibs/inputmask.dependencyLib */ "./node_modules/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js"), __webpack_require__(/*! ./global/window */ "./node_modules/inputmask/dist/inputmask/global/window.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./dependencyLibs/inputmask.dependencyLib */ "./node_modules/Inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js"), __webpack_require__(/*! ./global/window */ "./node_modules/Inputmask/dist/inputmask/global/window.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -3618,9 +3539,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/dist/inputmask/inputmask.numeric.extensions.js":
+/***/ "./node_modules/Inputmask/dist/inputmask/inputmask.numeric.extensions.js":
 /*!*******************************************************************************!*\
-  !*** ./node_modules/inputmask/dist/inputmask/inputmask.numeric.extensions.js ***!
+  !*** ./node_modules/Inputmask/dist/inputmask/inputmask.numeric.extensions.js ***!
   \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -3635,7 +3556,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! ./inputmask */ "./node_modules/Inputmask/dist/inputmask/inputmask.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -4180,18 +4101,97 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/inputmask/index.js":
+/***/ "./node_modules/Inputmask/index.js":
 /*!*****************************************!*\
-  !*** ./node_modules/inputmask/index.js ***!
+  !*** ./node_modules/Inputmask/index.js ***!
   \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./dist/inputmask/inputmask.extensions */ "./node_modules/inputmask/dist/inputmask/inputmask.extensions.js");
-__webpack_require__(/*! ./dist/inputmask/inputmask.date.extensions */ "./node_modules/inputmask/dist/inputmask/inputmask.date.extensions.js");
-__webpack_require__(/*! ./dist/inputmask/inputmask.numeric.extensions */ "./node_modules/inputmask/dist/inputmask/inputmask.numeric.extensions.js");
+__webpack_require__(/*! ./dist/inputmask/inputmask.extensions */ "./node_modules/Inputmask/dist/inputmask/inputmask.extensions.js");
+__webpack_require__(/*! ./dist/inputmask/inputmask.date.extensions */ "./node_modules/Inputmask/dist/inputmask/inputmask.date.extensions.js");
+__webpack_require__(/*! ./dist/inputmask/inputmask.numeric.extensions */ "./node_modules/Inputmask/dist/inputmask/inputmask.numeric.extensions.js");
 
-module.exports = __webpack_require__(/*! ./dist/inputmask/inputmask.js */ "./node_modules/inputmask/dist/inputmask/inputmask.js");
+module.exports = __webpack_require__(/*! ./dist/inputmask/inputmask.js */ "./node_modules/Inputmask/dist/inputmask/inputmask.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/custom-jquery-methods/fn/get-my-elements.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/custom-jquery-methods/fn/get-my-elements.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+	'use strict';
+	/**
+	 * Search on the page or retrieve from the date of the desired item.
+	 *
+	 * First, look at the date object on a certain property.
+	 * If it is empty - look for the element on the specified selector in the given direction.
+	 * When found, write it in the date object to
+	 * at subsequent calls - we get from the date, faster and without searching.
+	 *
+	 * ___!!! If called element more then one,___
+	 * ___then the method is performed only for the first___
+	 *
+	 * @example <caption>Find / retrieve nested items</caption>
+	 * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
+	 *
+	 * @example <caption>Find / retrieve nested items only in context block</caption>
+	 * let $context = $('.demo');
+	 * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', $context);
+	 *
+	 * @example <caption>Finding / getting the parent element</caption>
+	 * let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
+	 *
+	 * @example <caption>Search / retrieve similar items except for the current one</caption>
+	 * let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
+	 *
+	 * @param {string} dataKey - the property key from the data object of the element
+	 * @param {JQuery.Selector} selector - search selector
+	 * @param {string|JQuery} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
+	 * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
+	 *
+	 * @name getMyElements
+	 * @param {string} dataKey
+	 * @param {string} selector
+	 * @param {string|jQuery} [direction='document']
+	 * @param {boolean} [direction='document']
+	 * @return {jQuery}
+	 * @sourceCode
+	 */
+	jQuery.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
+		/** @type {jQuery} */
+		const $element = this.eq(0);
+		const keyIsSelector = (typeof dataKey === 'string');
+		let $target = keyIsSelector ? $element.data(dataKey) : null;
+
+		if (!$target) {
+			if (direction === 'document' || (direction && direction.jquery)) {
+				if (direction.jquery) {
+					$target = direction.find(selector);
+				} else {
+					$target = jQuery(selector);
+				}
+				if ($target.length && notSelf) {
+					$target = $target.not($element);
+				}
+			} else {
+				$target = $element[direction](selector);
+			}
+			$element.data(dataKey, $target);
+		}
+
+		if (!$target.length) {
+			$element.data(dataKey, null);
+		}
+
+		return $target;
+	};
+})();
 
 
 /***/ }),
@@ -16429,136 +16429,55 @@ const wsTabs = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery.mmenu */ "./node_modules/jquery.mmenu/dist/jquery.mmenu.all.js");
+/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_mmenu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
+/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(select2__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var wezom_standard_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! wezom-standard-tabs */ "./node_modules/wezom-standard-tabs/index.js");
+/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
+/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ion-rangeslider */ "./node_modules/ion-rangeslider/js/ion.rangeSlider.js");
+/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ion_rangeslider__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _js_components_count_box_change__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/components/count-box-change */ "./resources/assets/js/components/count-box-change.js");
+/* harmony import */ var _js_components_magnificPopup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../js/components/magnificPopup */ "./resources/assets/js/components/magnificPopup.js");
+/* harmony import */ var _js_components_validate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../js/components/validate */ "./resources/assets/js/components/validate.js");
+/* harmony import */ var _js_components_validate__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_js_components_validate__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _js_components_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../js/components/select */ "./resources/assets/js/components/select.js");
+/* harmony import */ var _js_components_mask__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../js/components/mask */ "./resources/assets/js/components/mask.js");
+/* harmony import */ var _js_components_menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../js/components/menu */ "./resources/assets/js/components/menu.js");
+/* harmony import */ var _js_components_filter_range__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../js/components/filter-range */ "./resources/assets/js/components/filter-range.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+wezom_standard_tabs__WEBPACK_IMPORTED_MODULE_3__["default"].init();
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/count-box-change.js":
+/*!************************************************************!*\
+  !*** ./resources/assets/js/components/count-box-change.js ***!
+  \************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery.mmenu */ "./node_modules/jquery.mmenu/dist/jquery.mmenu.all.js");
-/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_mmenu__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
-/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
-/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(select2__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var wezom_standard_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! wezom-standard-tabs */ "./node_modules/wezom-standard-tabs/index.js");
-/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
-/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
-/* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ion-rangeslider */ "./node_modules/ion-rangeslider/js/ion.rangeSlider.js");
-/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(ion_rangeslider__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
-
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  wezom_standard_tabs__WEBPACK_IMPORTED_MODULE_4__["default"].init();
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".filter-options__button--reset").click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".select").select2('val', '1');
-  });
-
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(".phone__mask").length) {
-    inputmask__WEBPACK_IMPORTED_MODULE_6___default()("+380 99 999 99 99", {
-      placeholder: ""
-    }).mask(jquery__WEBPACK_IMPORTED_MODULE_0___default()(".phone__mask"));
-  }
-
-  var form = jquery__WEBPACK_IMPORTED_MODULE_0___default()("form");
-  form.each(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).validate({
-      showErrors: function showErrors(errorMap, errorList) {
-        if (errorList.length) {
-          var s = errorList.shift();
-          var n = [];
-          n.push(s);
-          this.errorList = n;
-        }
-
-        this.defaultShowErrors();
-      },
-      success: 'valid'
-    });
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#footer-subscribe').validate();
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.footer-subscribe__button').click(function () {
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#footer-subscribe').valid() == false) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.footer-subscribe__button').removeAttr('data-mfp-src');
-    } else {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.footer-subscribe__button').attr('data-mfp-src', '#subscribe');
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.category-selector').select2({
-    placeholder: "Все категории",
-    allowClear: true,
-    minimumResultsForSearch: -1
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".rectangle-select").change(function () {
-    var str = "";
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("select option:selected").each(function () {
-      str = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val();
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prise").text(str);
-  }).change();
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.rectangle-select').select2({
-    width: '100%',
-    height: '40px'
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select').select2({
-    // data: data,
-    width: '100%',
-    height: '40px'
-  });
-
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-open').length) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-open').magnificPopup({
-      type: 'inline',
-      fixedContentPos: true,
-      fixedBgPos: true
-    });
-  }
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-open__sub').magnificPopup({
-    type: 'inline',
-    callbacks: {
-      close: function close() {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#footer-subscribe').submit();
-      }
-    }
-  }); // $(window).resize(function() {
-
-  var $menu = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#header-nav").mmenu({
-    navbar: {
-      title: "TEST"
-    },
-    "extensions": ["border-none", "fx-menu-slide"]
-  });
-  var $icon = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#header-nav__open");
-  var API = $menu.data("mmenu");
-  $icon.on("click", function () {
-    API.open();
-  });
-  API.bind("open:finish", function () {
-    setTimeout(function () {
-      $icon.addClass("is-active");
-    }, 5);
-  });
-  API.bind("close:finish", function () {
-    setTimeout(function () {
-      $icon.removeClass("is-active");
-    }, 5);
-  }); // });
-  // $('#menu-category__button').click(function() {
-  //   $('.menu-category__links').addClass('add-links')
-  // })
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-category__button').click(function () {
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').hasClass('add-links')) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').removeClass('add-links');
-    } else {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu-category__links').addClass('add-links');
-    }
-  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-offer .price').each(function () {
     var curIndex = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').index(this);
     var currentPrice = parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text().replace(/\s/g, ''));
@@ -16568,33 +16487,331 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
       if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() > parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'))) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text(currentPrice * parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max')));
       } else if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() < parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'))) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text(currentPrice * parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min')));
       } else {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.price').eq(curIndex).text(newPrice);
       }
     });
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".filter-range").ionRangeSlider({
-    skin: "round",
-    type: "double",
-    min: -100000,
-    max: 100000,
-    from: -100000,
-    to: 100000,
-    step: 10000,
-    grid: false,
-    // show/hide grid
-    force_edges: false,
-    // force UI in the box
-    hide_min_max: true,
-    // show/hide MIN and MAX labels
-    hide_from_to: true,
-    // show/hide FROM and TO labels
-    block: false // block instance from changing
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.down').click(function () {
+    var $input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent().find('input');
+    var count = parseInt($input.val()) - 1;
+    count = count < 1 ? 1 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.up').click(function () {
+    var $input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent().find('input');
+    $input.val(parseInt($input.val()) + 1);
+    $input.change();
+    return false;
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').each(function () {
+    var curIndex = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').index(this);
+    var currentPrice = parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').eq(curIndex).text());
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket__count').eq(curIndex).change(function () {
+      var multiplier = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val();
+      var newPrice = currentPrice * multiplier;
 
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() > parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'))) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('max'));
+      } else if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val() < parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'))) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min'));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').eq(curIndex).text(currentPrice * parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('min')));
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').eq(curIndex).text(newPrice);
+      }
+    });
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket__count').change(function () {
+    var arrPrice = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popup-basket-price__change').map(function () {
+      return parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).text());
+    }).get();
+
+    var reducer = function reducer(accumulator, currentValue) {
+      return accumulator + currentValue;
+    };
+
+    var summ = arrPrice.reduce(reducer);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#popup-basket-price--all').text(summ);
   });
 });
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/filter-range.js":
+/*!********************************************************!*\
+  !*** ./resources/assets/js/components/filter-range.js ***!
+  \********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ion-rangeslider */ "./node_modules/ion-rangeslider/js/ion.rangeSlider.js");
+/* harmony import */ var ion_rangeslider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ion_rangeslider__WEBPACK_IMPORTED_MODULE_0__);
+
+$(".filter-range").ionRangeSlider({
+  skin: "round",
+  type: "double",
+  grid: false,
+  force_edges: false,
+  hide_min_max: true,
+  hide_from_to: true,
+  block: false,
+  onChange: function onChange(data) {
+    $('#jsMinPrice').val(data.from.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+    $('#jsMaxPrice').val(data.to.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  }
+});
+
+jsMinPrice.onkeypress = function (event) {
+  if (event.key.length > 1) return true;
+  jsMinPrice.value = (jsMinPrice.value + event.key).replace(/\D/g, '').replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
+  event.preventDefault();
+};
+
+jsMaxPrice.onkeypress = function (event) {
+  if (event.key.length > 1) return true;
+  jsMaxPrice.value = (jsMaxPrice.value + event.key).replace(/\D/g, '').replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
+  event.preventDefault();
+};
+
+var filter_price = $('.price_input');
+filter_price.keypress(function () {
+  if (parseInt($(this).val().replace(/\s/g, '')) > 100000) {
+    $(this).val($(".filter-range").data('max').toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  } else if (parseInt($(this).val().replace(/\s/g, '')) < 0) {
+    $(this).val($(".filter-range").data('min').toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  } else if (parseInt($('#jsMinPrice').val().replace(/\s/g, '')) > parseInt($('#jsMaxPrice').val().replace(/\s/g, ''))) {
+    $('#jsMinPrice').val($(".filter-range").data('min').toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  }
+
+  var my_range = $('.filter-range').data('ionRangeSlider');
+  var rangeData = $('.filter-range').val().split(/;/, 2);
+
+  for (var i = 0; i < 2; i++) {
+    rangeData[i] = parseInt(filter_price.eq(i).val().replace(/\s/g, ''));
+  }
+
+  my_range.update({
+    from: rangeData[0],
+    to: rangeData[1]
+  });
+});
+filter_price.change(function () {
+  if ($(this).val() < parseInt($(this).attr('min'))) {
+    $(this).val($(this).attr('min'));
+  }
+});
+$('#filter-open').click(function () {
+  if ($('.filter__wrapper ').hasClass('add-filter')) {
+    $('.filter__wrapper ').removeClass('add-filter');
+  } else {
+    $('.filter__wrapper ').addClass('add-filter');
+  }
+});
+$('.resetFilterBtn').click(function () {
+  my_range.reset();
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/magnificPopup.js":
+/*!*********************************************************!*\
+  !*** ./resources/assets/js/components/magnificPopup.js ***!
+  \*********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_0__);
+
+
+if ($('.popup-open').length) {
+  $('.popup-open').magnificPopup({
+    type: 'inline',
+    fixedContentPos: true,
+    fixedBgPos: true,
+    overflowY: 'auto',
+    closeBtnInside: true,
+    preloader: false,
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'my-mfp-zoom-in'
+  });
+}
+
+$('.popup-open__sub').magnificPopup({
+  type: 'inline',
+  removalDelay: 300,
+  mainClass: 'my-mfp-zoom-in',
+  callbacks: {
+    close: function close() {
+      $('#footer-subscribe').submit();
+    }
+  }
+});
+$('.image-popup-fit-width').magnificPopup({
+  type: 'image',
+  closeOnContentClick: true,
+  image: {
+    verticalFit: false
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/mask.js":
+/*!************************************************!*\
+  !*** ./resources/assets/js/components/mask.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var Inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Inputmask */ "./node_modules/Inputmask/index.js");
+/* harmony import */ var Inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(Inputmask__WEBPACK_IMPORTED_MODULE_0__);
+
+
+if ($(".phone__mask").length) {
+  Inputmask__WEBPACK_IMPORTED_MODULE_0___default()("+380 99 999 99 99", {
+    placeholder: ""
+  }).mask($(".phone__mask"));
+}
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/menu.js":
+/*!************************************************!*\
+  !*** ./resources/assets/js/components/menu.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery.mmenu */ "./node_modules/jquery.mmenu/dist/jquery.mmenu.all.js");
+/* harmony import */ var jquery_mmenu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_mmenu__WEBPACK_IMPORTED_MODULE_0__);
+
+var $menu = $("#header-nav").mmenu({
+  navbar: {
+    title: "TEST"
+  },
+  "extensions": ["border-none", "fx-menu-slide"]
+});
+var $icon = $("#header-nav__open");
+var API = $menu.data("mmenu");
+$icon.on("click", function () {
+  API.open();
+});
+API.bind("open:finish", function () {
+  setTimeout(function () {
+    $icon.addClass("is-active");
+  }, 5);
+});
+API.bind("close:finish", function () {
+  setTimeout(function () {
+    $icon.removeClass("is-active");
+  }, 5);
+});
+$('#menu-category__button').click(function () {
+  if ($('.menu-category__links').hasClass('add-links')) {
+    $('.menu-category__links').removeClass('add-links');
+  } else {
+    $('.menu-category__links').addClass('add-links');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/select.js":
+/*!**************************************************!*\
+  !*** ./resources/assets/js/components/select.js ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
+/* harmony import */ var select2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(select2__WEBPACK_IMPORTED_MODULE_0__);
+
+$('.category-selector').select2({
+  placeholder: "Все категории",
+  allowClear: true,
+  minimumResultsForSearch: -1
+});
+$('.select').select2({
+  width: '100%',
+  height: '40px',
+  minimumResultsForSearch: -1
+});
+$('.rectangle-select').select2({
+  width: '100%',
+  height: '40px'
+});
+$(".filter-options__button--reset").click(function () {
+  $(".select").select2('val', '1');
+});
+$('.rectangle-select').on('select2:select', function () {
+  var curOptionVal = $(this).val();
+
+  if ($(".product-price ").eq(parseInt(curOptionVal) - 1).data('price') === parseInt(curOptionVal)) {
+    $(".product-price-active").addClass('hide');
+    $(".product-discount-active").addClass('hide');
+    $(".product-info-quantity").addClass('hide');
+    $(".product-price-active").eq(parseInt(curOptionVal) - 1).removeClass('hide');
+    $(".product-discount-active").eq(parseInt(curOptionVal) - 1).removeClass('hide');
+    $(".product-info-quantity").eq(parseInt(curOptionVal) - 1).removeClass('hide');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/validate.js":
+/*!****************************************************!*\
+  !*** ./resources/assets/js/components/validate.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var form = $("form");
+form.each(function () {
+  $(this).validate({
+    showErrors: function showErrors(errorMap, errorList) {
+      if (errorList.length) {
+        var s = errorList.shift();
+        var n = [];
+        n.push(s);
+        this.errorList = n;
+      }
+
+      this.defaultShowErrors();
+    }
+  });
+});
+
+if ($('.footer-subscribe__button').length) {
+  $('.footer-subscribe__button').removeAttr('data-mfp-src');
+}
+
+if ($('.footer-subscribe__input').length) {
+  $('.footer-subscribe__input').change(function () {
+    if ($('#footer-subscribe').valid() == false) {
+      $('.footer-subscribe__button').removeAttr('data-mfp-src');
+    } else {
+      $('.footer-subscribe__button').attr('data-mfp-src', '#subscribe');
+    }
+  });
+}
 
 /***/ }),
 

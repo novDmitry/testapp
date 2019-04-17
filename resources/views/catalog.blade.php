@@ -15,6 +15,7 @@
         </div>
     <div class="section__wrapper">
             @include('widgets/catalog-filter')
+            @include('widgets/catalogs')
     </div>
-    {{-- @include('widgets/footer') --}}
+    @include('widgets/footer')
 @endsection

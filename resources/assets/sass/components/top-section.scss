@@ -91,6 +91,7 @@
 .menu-category__links-list {
     margin: 0;
     position: absolute;
+    z-index: 9999;
     width: 320px;
     padding: 0px;
     background-color: #fff;
@@ -238,7 +239,7 @@
     }
 }
 
-.filter__wrapper {
+.filter__wrapper-select {
     max-width: 1015px;
     margin-top: 22px;
 }

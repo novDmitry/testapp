@@ -1,6 +1,6 @@
 <div class="product__wrapper">
     <div class="product-content__wrapper">
-            <div class="product__img--big">
+            <div class="product__img--big image-popup-fit-width" href="img/{{$_mock->cards->products[4]->img_big}}">
             <img src="img/{{$_mock->cards->products[4]->img_big}}" alt="big">
             </div>
 
@@ -44,7 +44,7 @@
                             @endfor
                     </div>
                 
-                    <div class="product-info__feedback">{{$_mock->cards->products[4]->feedback}}</div>
+                    <div href="#feedback" class="product-info__feedback">{{$_mock->cards->products[4]->feedback}}</div>
         
             </div>
             
@@ -84,16 +84,29 @@
                     <div class="rectangle__title">Выберите размер</div>
                     <div class="rectangle__select">
                         <select data-placeholder="205/55/r16 h" class="select rectangle-select">
-                            @foreach ($_mock->rectangle_select->selects as $select)
-                            <option value="{{$select->price}}">{{$select->title}}</option>
+                            @foreach ($_mock->cards->products[4]->prices as $item)
+                            <option class="option-size" value="{{$item->data}}">{{$item->size}}</option>
                             @endforeach
                         </select>
                     </div>
         
                     <div class="flex__wrapper items--ct">
-        
-                            <div class="product-info-quantity">В наличии: 24 шт.</div>
-        
+                            @foreach ($_mock->cards->products[4]->prices as $item)
+                            @if ($loop->first)
+                                @if ($item->quantity !== '')
+                                <div class="product-info-quantity">В наличии: {{$item->quantity}} шт.</div>
+                                @else
+                                <div class="product-info-quantity">Нет в наличии</div>
+                                @endif
+                            @else
+                                @if ($item->quantity !== '')
+                                <div class="product-info-quantity hide">В наличии: {{$item->quantity}} шт.</div>
+                                @else
+                                <div class="product-info-quantity hide">Нет в наличии</div>
+                                @endif
+                            @endif
+                            @endforeach
+                            
                             <div class="product-quantity__wrapper">
                                 <div class="product-quantity__title">Выберите кол-во:</div>
                                 <div class="product-quantity__select">
@@ -123,10 +136,20 @@
                     </div>   
                 <div class="product-price__wrapper">
                 <div class="product-info-prices">
-                        <div class="product-price"><span class="prise">{{$_mock->cards->products[4]->price}}</span> грн.</div>
-                        @if ($_mock->cards->products[4]->old_price !== '')
-                        <div class="product-discount">{{$_mock->cards->products[4]->old_price}} грн.</div>
+                        @foreach ($_mock->cards->products[4]->prices as $item)
+                        @if ($loop->first)
+                        <div data-price="{{$item->data}}" class="product-price product-price-active"><span class="prise">{{$item->price}}</span> грн.</div>
+                        @if ($item->old_price !== '')
+                        <div class="product-discount product-discount-active">{{$item->old_price}} грн.</div>
                         @endif
+                        @else
+                        <div data-price="{{$item->data}}" class="product-price product-price-active hide"><span class="prise">{{$item->price}}</span> грн.</div>
+                        @if ($item->old_price !== '')
+                        <div class="product-discount product-discount-active hide">{{$item->old_price}} грн.</div>
+                        @endif
+                        @endif
+                        @endforeach
+                        
                     </div>
                 </div>
                         <button class="button product-buy">
@@ -196,9 +219,9 @@
 
         <div data-wstabs-ns="group-t" data-wstabs-block="1" class="product-detail-description my-block is-active">
             <div class="product-detail-description__text">
-
+                <p>
                     Если вы также планируете приобрести шины для своего автомобиля, вам следует определиться с несколькими наиболее важными параметрами покрышек. И первый из них – это компания-производитель. Современный рынок автопродукции предлагает сегодня резину более чем 40 изготовителей – здесь и Nokian, и Michelin, и Continental, и множество других марок. И поэтому перед  тем, как сделать выбор в пользу того или иного бренда, вам стоит узнать отзывы бывалых автовладельцев.
-
+                </p>
             </div>
 
             <div class="product-detail-description__wrapper">
@@ -206,9 +229,15 @@
                     <img src="img/description.jpg" alt="detail">
                 </div>
                 <div class="product-detail-description__text-wrapper">
-                <div class="product-detail-description__text">Следующий ключевой момент – это сезонность покрышек. Если вам кажется, что опираться тут следует только на наступившее время года, вы сильно заблуждаетесь. Сложности возникают и здесь. К примеру, с тем, стоит ли приобретать резину в Херсоне, которая рассчитана на круглогодичное использование, то есть, демисезонные покрышки. Или же отдать предпочтение отдельно зимним и летним шинам.
-                    </div>
-                <div class="product-detail-description__text">Что касается типоразмера, то здесь никаких вариантов не должно быть. Ориентируйтесь только на характеристики собственного транспортного средства, и ни на что другое. Если у вас возникли какие-либо сомнения при приобретении шины, проконсультируйтесь со специалистами. Помните о том, что от качества и надежности купленной вами резины зависит самое главное – ваша безопасность на дороге. Не рискуйте своим здоровьем и жизнью, и приобретайте только высококачественные покрышки в Херсоне, которые предлагает вам наш интернет-магазин.
+                <div class="product-detail-description__text">
+                    <p>
+                    Следующий ключевой момент – это сезонность покрышек. Если вам кажется, что опираться тут следует только на наступившее время года, вы сильно заблуждаетесь. Сложности возникают и здесь. К примеру, с тем, стоит ли приобретать резину в Херсоне, которая рассчитана на круглогодичное использование, то есть, демисезонные покрышки. Или же отдать предпочтение отдельно зимним и летним шинам.
+                    </p>
+                </div>
+                <div class="product-detail-description__text">
+                    <p>
+                    Что касается типоразмера, то здесь никаких вариантов не должно быть. Ориентируйтесь только на характеристики собственного транспортного средства, и ни на что другое. Если у вас возникли какие-либо сомнения при приобретении шины, проконсультируйтесь со специалистами. Помните о том, что от качества и надежности купленной вами резины зависит самое главное – ваша безопасность на дороге. Не рискуйте своим здоровьем и жизнью, и приобретайте только высококачественные покрышки в Херсоне, которые предлагает вам наш интернет-магазин.
+                    </p>
                 </div>
                 </div>
             </div>
@@ -233,7 +262,7 @@
                     <div class="product-offer__row product-offer__row-size">{{$product->size}}</div>
                     <div class="product-offer__row product-offer__row-index">{{$product->index}}</div>
                     <div class="product-offer__row product-offer__row-quantity"><input type="number" class="box" max="24" min="1" value="{{$product->quantity}}">шт.</div>
-                    <div class="product-offer__row product-offer__row-price"><span class="price">{{$product->price}}</span>грн.</div>
+                    <div class="product-offer__row product-offer__row-price"><span class="price">{{$product->prices[0]->price}}</span>грн.</div>
                     <div class="product-offer__row product-offer__row-button">
 
                         <button class="button product-buy">
