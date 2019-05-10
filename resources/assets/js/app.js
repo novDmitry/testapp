@@ -14,7 +14,6 @@ import "../js/components/filter-range"
 import "../js/components/anchor"
 import "../js/components/delete-product"
 wsTabs.init();
-import "../js/jquery.googlemap"
 import "../js/components/maps"
 
 $('.jsPhons').each(function () {
