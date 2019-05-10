@@ -1,7 +1,7 @@
 <div class="popup-wrapper zoom-anim-dialog mfp-hide" id="popup-wrapper">
     <div class="popup-enter popup-enter__wrapper">
         <div class="popup__title">Вход в личный кабинет</div>
-        <form action="#" class="popup-entert__form">
+        <form action="#" class="popup-entert__form jsFormValid">
             <div class="field-wrap">
                 <label  class="field__title">
                     <span class="text">Ваш email</span> 
@@ -31,23 +31,11 @@
     <div class="popup__line--gray"></div>
     <div class="popup-enter popup-enter__social">
         <div class="popup__title">Войти с помощью</div>
-        <div class="popup-enter__social-button-items">
-            <button class="popup-enter__social-button-item button button--blue">
-                <svg style="width: 9px; height: 12px" class="svg-social">
-                    <use xlink:href="sprite.svg#sprite-f"></use>
-                </svg>
-                <span class="text">Facebook</span></button>
-            <button class="popup-enter__social-button-item button button--lblue">
-                <svg style="width: 17px; height: 14px" class="svg-social">
-                    <use xlink:href="sprite.svg#sprite-t"></use>
-                </svg>
-                <span class="text">Twitter</span></button>
-            <button class="popup-enter__social-button-item button button--red">
-                    <svg style="width: 16px; height: 16px" class="svg-social">
-                            <use xlink:href="sprite.svg#sprite-google"></use>
-                        </svg>
-                <span class="text">Google</span></button>
-        </div>
+            <div class="popup-enter__social-button-items">
+            @include('widgets/social_button', [
+                'title' => 'Оставить отзыв'
+            ])
+            </div>
     </div>
 </div>
 <div class="popup-wrapper zoom-anim-dialog mfp-hide popup-callback__wrap" id="popup-callback">

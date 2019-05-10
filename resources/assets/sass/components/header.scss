@@ -7,99 +7,130 @@
     background-color: #fff;
 }
 
-.header-wrap {
-    height: 100%;
-    max-height: 80px;
-
-    @include md {
-        max-height: 140px;
-    }
-}
-
-.header-line__back {
+.header {
     width: 100%;
-    height: 50px;
-
-    &--gray {
-        background-color: #696969;
-    }
-}
-
-.header-wrapper {
-    max-width: 1360px;
-    height: auto;
-    width: 100%;
-    margin: 0 auto;
     display: flex;
-    background-color: #696969;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 20;
 
+    &--top {
+        background-color: #696969;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+    
+        @include md {
+            position: relative;
+        }
+    }
+
+    &--bottom {
+        background-color: #fff;
+        margin-top: 29px;
+        min-height: 50px;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+    
+        @include md {
+            position: relative;
+        }
+    }
+
+    &__button {
+        width: 56px;
+        
     @include md {
-        position: relative;
+        width: 124px;
+    }
+
+        &-svg {
+            width: 15px;
+            height: 16px;
+    
+            @include rwd(900) {
+                margin-right: 10px;
+            }
+        }
+
+        &-text {
+            font-size: 0;
+
+            @include rwd(900) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__logo svg {
+        width: 196px;
+        height: 38px;
+        display: none;
+    
+        @include rwd(900) {
+            display: block;
+        }
     }
 }
-
 
 
 .header-nav {
-    font-size: 12px;
-    display: flex;
+    &__links {
+        padding-top: 20px;
+        display: none;
 
-    &__button {
-
-        @include sm {
-            display: block;
+        @include md {
+            display: flex;
         }
+    }
+    &__link {
+        text-decoration: none;
+        height: 28px;
+        padding: 0 12px;
+        margin-right: 12px;
+        color: #c3c3c3;
+        font-size: 12px;
+        text-transform: uppercase;        
+        font-weight: 400;
+        border-bottom: 2px solid transparent;
+        transition: 0.3s;
+
+        &:first-child {
+            padding: 0 12px 0 0;
+        }
+
+        &:hover {
+            border-bottom: 2px solid #ffc925;
+        }
+
+        &--active {
+            color: #fff;
+            border-bottom: 2px solid #ffc925;
+        }
+    }
+    &--mob {
+        display: block;
 
         @include rwd(900) {
             display: none;
-        }        
-
-        &:focus {
-            outline: none;
         }
     }
 
-    &__items {
-        padding: 0;
-        margin: 0;
+    &__lists {
+        display: flex;
+        flex-direction: column;
 
-        @include sm {
-            flex-direction: column;
+        .header-nav {
+            &__links {
+                display: flex;
+                flex-direction: column;
+            }
+            &__link {
+                padding: 9px 23px;
+            }
         }
-
-        @include rwd(900) {
-            flex-direction: row;
-        }
-    }
-
-    &__item {
-        
-        height: 48px;
-        line-height: 50px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #c3c3c3;
-
-        @include sm {
-            margin: 0;
-            padding: 0;
-            padding-left: 23px;
-        }
-
-        @include md {
-            padding: 0 15px;
-            margin: 0px 23px 0px -15px;
-            justify-content: center;
-        }
-
-    }
-
-    .active {
-        border-bottom: 2px solid #ffc925;
-        color: #fff;
     }
 }
 
@@ -118,102 +149,7 @@
     --mm-color-button: #ffc925;
 }
 
-.button {
-    cursor: pointer;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-}
-
-.header__nav--dt {
-    @include sm {
-        display: none;
-    }
-
-    @include rwd(900) {
-        display: block;
-    }
-}
-
-
-.header-popup {
-
-    &__button {
-        height: 50px;
-        font-size: 12px;
-        max-width: 124px;
-        width: 100%;
-        background-color: #ff8900;
-        color: #fff;
-        text-transform: uppercase;
-
-        @include sm {
-            max-width: 56px;
-            padding: 0;
-        }
-        @include md {
-            max-width: 124px;
-        }
-    }
-
-    &__icon {
-        width: 15px;
-        height: 16px;
-
-        @include rwd(900) {
-            margin-right: 10px;
-        }
-    }
-}
-
-.button__title {
-    @include sm {
-        display: none;
-    }
-
-    @include md {
-        display: block;
-    }
-}
-
-.second-header-wrapper {
-    display: flex;
-    
-    background-color: #fff;
-    width: 100%;
-    z-index: 20;
-    margin: auto;
-    position: fixed;
-    bottom: 0px;
-
-    @include sm {
-        border-top: 1px solid #acacac;
-        justify-content: center;
-        padding-top: 5px;
-    }
-
-    @include md {
-        border: none;
-        max-width: 1360px;
-        padding-top: 37px;
-        position: relative;
-        justify-content: space-between;
-    }
-}
-
-.header__logo svg {
-    width: 196px;
-    height: 38px;
-    display: none;
-
-    @include rwd(900) {
-        display: block;
-    }
-}
-
-.header-callback__wrap {
+.header-callback {
     width: auto;
     margin-left: 33px;
 
@@ -224,9 +160,20 @@
     @include md {
         display: flex;
     }
+
+    &__button {
+        flex-shrink: 0;
+        width: 197px;
+    }
+
+    &__svg {
+        width: 12px;
+        height: 17px;
+        margin-right: 10px;
+    }
 }
 
-.phone-wrap {
+.phone-wrapper {
     padding-right: 44px;
     padding-left: 12px;
     max-width: 387px;
@@ -271,22 +218,6 @@
     }
 }
 
-.header-callback {
-
-    &__button--orange {
-        width: 100%;
-        padding: 0 30px;
-        background-color: #ff8900;
-        color: #fff;
-        text-transform: uppercase;
-    }
-
-    &__icon {
-        width: 12px;
-        height: 17px;
-        margin-right: 10px;
-    }
-}
 
 .mmenu_ctm {
     margin-top: 5px;
@@ -337,7 +268,7 @@
     &-icon {
         width: 32px;
         height: 22px;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
 
         @include md {
             width: 40px;

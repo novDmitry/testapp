@@ -1,7 +1,7 @@
-let form = $("form");
+// let form = $(".jsFormValid");
 
-form.each(function() {
-    $(this).validate({
+$(".jsFormValid").each(function() {
+    ($(this)).validate({
         showErrors: function(errorMap, errorList) {
         if (errorList.length) {
             let s = errorList.shift();
@@ -12,19 +12,23 @@ form.each(function() {
         this.defaultShowErrors();
         },
     });
-});
+})
 
-if ($('.footer-subscribe__button').length) {
-$('.footer-subscribe__button').removeAttr('data-mfp-src');
+$('.popup-entert__form').validate()
+
+
+
+if ($('.jsSubscribeButton').length) {
+$('.jsSubscribeButton').removeAttr('data-mfp-src');
 }
 
 if ($('.footer-subscribe__input').length) {
 $('.footer-subscribe__input').change(function () {
     if ($('#footer-subscribe').valid() == false) {
-    $('.footer-subscribe__button').removeAttr('data-mfp-src');
+    $('.jsSubscribeButton').removeAttr('data-mfp-src');
     }
     else {
-    $('.footer-subscribe__button').attr('data-mfp-src', '#subscribe');
+    $('.jsSubscribeButton').attr('data-mfp-src', '#subscribe');
     }
 })
 }

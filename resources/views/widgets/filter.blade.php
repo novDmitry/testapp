@@ -9,7 +9,7 @@
                     <div class="filter-options__text">{{$filter_titles->title}}</div>
                 </button>
                 @else
-                <button class="filter-options__link button " data-wstabs-ns="group-a" data-wstabs-button="{{$filter_titles->data}}">
+                <button class="filter-options__link button" data-wstabs-ns="group-a" data-wstabs-button="{{$filter_titles->data}}">
                         <svg class="filter-options__svg">
                         <use xlink:href="sprite.svg#sprite-{{$filter_titles->svg}}"></use>
                         </svg>
@@ -21,7 +21,7 @@
         @foreach ($_mock->filter_options->filter_form as $filter_forms)
             @if ($filter_forms == $_mock->filter_options->filter_form[0])
             <div data-wstabs-ns="group-a" data-wstabs-block="{{$filter_forms->data}}" class="filter-options__form-wrap is-active">
-                    <form action="" class="filter-options__form">
+                    <form action="" class="filter-options__form jsFormValid">
                         <div class="switch-tabs__items">
                             @foreach ($filter_forms->tabs as $tab)
                             @if ($tab == $filter_forms->tabs[0])
@@ -46,7 +46,7 @@
                                         </div>
                                     @endforeach
                                     <div class="prise-filter__items">
-                                        <div class="title">Цена</div>
+                                        <div class="prise-filter__title">Цена</div>
                                         <label class="label" for="">
                                                 <input type="number" data-rule-minlength="50" data-msg-minlength="от 50" placeholder="50" class="prise-filter__item">
                                         </label>
@@ -69,7 +69,7 @@
                                         </div>
                                     @endforeach
                                     <div class="prise-filter__items">
-                                        <div class="title">Цена</div>
+                                        <div class="prise-filter__title">Цена</div>
                                         <label class="label" for="">
                                                 <input type="number" placeholder="50" data-msg-minlength="от 50" min="50" class="prise-filter__item">
                                         </label>
@@ -82,14 +82,23 @@
                         @endif
                         @endforeach
                         <div class="filter-options__buttons">
-                            <button type="button" class="button filter-options__button filter-options__button--reset">Очистить фильтр</button>
-                            <button class="button filter-options__button filter-options__button--submit">Применить фильтр</button>
+                            <div class="filter-options__button">
+                                <button type="button" class="button button--reset">
+                                    <svg class="cross__icon">
+                                        <use xlink:href="sprite.svg#sprite-cross"></use>
+                                    </svg>
+                                    <span class="button__text button__text--bold">Очистить фильтр</span></button>
+                            </div>
+                            <div class="filter-options__button">
+                                <button class="button button--submit">
+                                    <span class="button__text button__text--bold">Применить фильтр</span></button>
+                            </div>
                         </div>
                     </form>
                 </div>
             @else
             <div data-wstabs-ns="group-a" data-wstabs-block="{{$filter_forms->data}}" class="filter-options__form-wrap">
-                    <form action="" class="filter-options__form">
+                    <form action="" class="filter-options__form jsFormValid">
                         <div class="switch-tabs__items">
                             @foreach ($filter_forms->tabs as $tab)
                             @if ($tab == $filter_forms->tabs[0])
@@ -113,7 +122,7 @@
                                         </div>
                                     @endforeach
                                     <div class="prise-filter__items">
-                                        <div class="title">Цена</div>
+                                        <div class="prise-filter__">Цена</div>
                                         <label class="label" for="">
                                                 <input type="number" min="50" class="prise-filter__item">
                                         </label>
@@ -136,7 +145,7 @@
                                         </div>
                                     @endforeach
                                     <div class="prise-filter__items">
-                                        <div class="title">Цена</div>
+                                        <div class="prise-filter__title">Цена</div>
                                         <label class="label" for="">
                                                 <input type="number" min="50" class="prise-filter__item">
                                         </label>
@@ -149,8 +158,18 @@
                         @endif
                         @endforeach
                         <div class="filter-options__buttons">
-                            <button type="button" class="button filter-options__button filter-options__button--reset">Очистить фильтр</button>
-                            <button class="button filter-options__button filter-options__button--submit">Применить фильтр</button>
+                                <div class="filter-options__button">
+                                        <button type="button" class="button button--reset">
+                                            <svg class="cross__icon">
+                                                <use xlink:href="sprite.svg#sprite-cross"></use>
+                                            </svg>
+                                            <span class="button__text button__text--bold">Очистить фильтр</span></button>
+                                    </div>
+                                    <div class="filter-options__button">
+                                        <button class="button button--submit">
+                                            <span class="button__text button__text--bold">Применить фильтр</span></button>
+                                    </div>
+                                </div>
                         </div>
                     </form>
                 </div>

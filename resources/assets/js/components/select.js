@@ -16,7 +16,7 @@ $('.rectangle-select').select2({
     height: '40px',
 });
 
-$(".filter-options__button--reset").click(function(){
+$(".button--reset").click(function(){
     $(".select").select2('val', '1');
 });
 

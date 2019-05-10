@@ -15,33 +15,122 @@
 }
 
 .popup-basket__items {
+    // display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup-basket-clear {
+    width: fit-content;
+    margin: auto;
+    display: none;
+    color: #3b3b3b;
     margin-top: 36px;
 }
 
-.popup-basket__item {       
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.active {
+    display: block;
+}
+
+.popup-basket__item-wrapper {
+    transition: 0.5s;
+    overflow: hidden;
+    position: relative;
+    min-height: 126px;
     border-bottom: 1px solid #f0f0f0;
-    padding-top: 40px;
+    margin: 20px 0;
     padding-bottom: 40px;
     &:first-child {
-        padding-top: 0;
-        padding-bottom: 40px;
+        margin-top: 40px;
     }
     &:last-child {
-        padding-bottom: 0;
-        padding-top: 40px;
-        border-bottom: 0px solid #000;
+        border-bottom: 0px solid #fff;
+        // @include md {
+        //     margin-bottom: 63px;
+        // }
+    }
+
+    @include md {
+        margin-top: 80px;
+        margin-bottom: 0;
+        min-height: 90px;
+    }
+}
+
+.popup-basket-delete__accept {
+    top: 20px;
+    opacity: 1;
+    transition: 0.3s;
+    max-width: 150px;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+    color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup-basket-delete__title {
+    font-size: 20px;
+}
+
+.popup-basket-delete__buttons {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-basket-delete__button {
+    height: 25px;
+    width: 50px;
+    font-weight: 700;
+    color: #fff;
+    // height: auto;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &--yes {
+        background-color: #c41d1d;
+        padding: 5px 8px;
+        // margin: 20px 10px;
+    }
+    &--later {
+        background-color: #9c9c9c;
+    }
+    &--no {
+        padding: 5px 8px;
+        background-color: #1dc463;
+    }
+    &:hover {
+        background-color: #ff9500;
+    }
+}
+
+.popup-basket__item {
+    background-color: #fff;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md {
+        justify-content: center;
     }
 
     .popup-basket-price {
         margin-top: 10px;
-        font-size: 30px;
-        width: 170px;
+        font-size: 24px;
 
         @include md {
+            font-size: 30px;
+            width: 170px;
             margin-top: 0;
         }
     }
@@ -55,6 +144,7 @@
 }
 
 .popup-basket__icon--del {
+    cursor: pointer;
     width: 16px;
     height: 16px;
     position: relative;
@@ -66,7 +156,8 @@
         width: 18px;
         height: 2px;
         background-color: #c41d1d;
-        transform: rotate(45deg)
+        transform: rotate(45deg);
+        transition: 0.3s;
     }
     &::after {
         position: absolute;
@@ -76,36 +167,68 @@
         width: 18px;
         height: 2px;
         background-color: #c41d1d;
-        transform: rotate(-45deg)
-        
+        transform: rotate(-45deg);
+        transition: 0.3s;
+    }
+    &:hover {
+        &::after {
+            background-color: #ff002b;
+            transform: scale(1.2) rotate(-45deg);
+        }
+        &::before {
+            background-color: #ff002b;
+            transform: scale(1.2) rotate(45deg);
+        }
     }
 }
 
 .popup-basket__img--small {
-    margin-left: 22px;
-    margin-right: 22px;
-    width: 90px;
-    height: 90px;
+    // width: 40px;
+    // height: 20px;
+    transform: scale(0.5);
     img {
         width: auto;
         height: 100%;
     }
+
+    @include md {
+        margin-left: 22px;
+        margin-right: 22px;
+        width: 90px;
+        height: 90px;
+        transform: scale(1);
+        img {
+            width: auto;
+            height: 100%;
+        }
+
+    }
 }
 
 .popup-basket__title {
-    max-width: 300px;
+    max-width: 173px;
     width: 100%;
     color: #3b3b3b;
-    margin-right: 45px;
+    margin-right: 0;
+    
     .popup-basket__text {
         font-weight: normal;    
-        font-size: 17px;
+        font-size: 11px;
         text-decoration: underline;
+
+        @include md {
+            font-size: 17px;
+        }
+    }
+
+    @include md {
+        max-width: 300px;
+        margin-right: 45px;
     }
 }
 
 .popup-basket-price--one {
-    display: flex;
+    display: none;
     align-items: center;
     font-size: 14px;
     font-weight: normal;
@@ -115,6 +238,10 @@
         white-space: nowrap;
         font-size: 19px;
         margin: 0;
+    }
+
+    @include md {
+        display: flex;
     }
 }
 
@@ -143,12 +270,13 @@
 
 
 .popup-basket__counter {
-    width: 157px;
+    width: 110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
     @include md {
+        width: 157px;
         margin-top: 0;
         margin-right: 90px;
     }
@@ -156,14 +284,20 @@
 
 .popup-basket__count {
     background-color: #f0f0f0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     color: #9c9c9c;
-    width: 90px;
-    height: 50px;
+    width: 40px;
+    height: 20px;
     text-align: center;
     line-height: 50px;
     border: 0px;
+
+    @include md {
+        font-size: 16px;
+        width: 90px;
+        height: 50px;
+    }
 }
 
 .popup-basket__icon--pls {
@@ -195,7 +329,7 @@
 }
 
 .popup-basket-chekout__wrapper {
-    margin-top: 83px;
+    margin-top: 63px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -203,8 +337,17 @@
     justify-content: center;
 
     .continue__link {
+        cursor: pointer;
         color: #000000;
         font-size: 14px;
+        position: relative;
+        text-decoration: underline;
+        left: 0;
+        width: auto;
+        height: auto;
+        font-family: 'Roboto';
+        opacity: 1;
+        padding: 0;
     }
 }
 
@@ -238,4 +381,30 @@
 
 .popup-basket-buy {
     width: 210px;
+}
+
+.popup-basket-delete__accept {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+.delete-animation {
+    width: max-content;
+    animation: deleteAnimation 1.5s forwards;
+}
+
+@keyframes deleteAnimation {
+    0% {
+        left: 0px;
+        opacity: 1;
+    }   
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        left: 920px;
+    }
 }

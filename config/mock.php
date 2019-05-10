@@ -10,5 +10,6 @@ return [
     'rectangle_select' => config('mock.rectangle_select'),
     'filter_category' => config('mock.filter_category'),
     'catalog' => config('mock.catalog'),
-    'basket' => config('mock.basket')
+    'basket' => config('mock.basket'),
+    'contact' => config('mock.contact')
 ];

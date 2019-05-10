@@ -11,9 +11,10 @@
     </head>
     <body>
         <div class="wrapper">
-        @yield('content')
+            @yield('content')
+            
         </div>
-
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQVUQKyG3f6xsvj1HeRoxckTm1iNYVdGQ"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="js/app.js"></script>
     </body>

@@ -2,10 +2,10 @@
 
     <div class="product-info__lists-wrapper">
             @foreach ($_mock->catalog->info_lists as $info_list)
-                <div class="product-info__list">
-                    <div class="product-info__link">{{$info_list}}</div>
+                <a href="{{$info_list->links}}" class="product-info__list">
+                    <div class="product-info__link">{{$info_list->title}}</div>
                     <hr>
-                </div>
+                </a>
             @endforeach
         </div>
 

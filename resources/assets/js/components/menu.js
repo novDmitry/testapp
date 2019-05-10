@@ -28,11 +28,11 @@ API.bind("close:finish", function () {
   }, 5);
 });
 
-$('#menu-category__button').click(function () {
-  if ($('.menu-category__links').hasClass('add-links')) {
-    $('.menu-category__links').removeClass('add-links');
+$('.jsMenuButton').click(function () {
+  if ($('.menu__links').hasClass('add-links')) {
+    $('.menu__links').removeClass('add-links');
   }
   else {
-    $('.menu-category__links').addClass('add-links');
+    $('.menu__links').addClass('add-links');
   }
 })

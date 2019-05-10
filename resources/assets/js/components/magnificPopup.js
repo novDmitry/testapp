@@ -1,4 +1,5 @@
 import "magnific-popup"
+
 if ($('.popup-open').length) {
   $('.popup-open').magnificPopup({
     type: 'inline',
@@ -35,3 +36,8 @@ $('.image-popup-fit-width').magnificPopup({
     verticalFit: false
   }
 });
+
+
+$('.jsBasketClose').on('click', function() {
+  $.magnificPopup.close();
+})

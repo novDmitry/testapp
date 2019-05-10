@@ -11,21 +11,12 @@ import "../js/components/select"
 import "../js/components/mask"
 import "../js/components/menu"
 import "../js/components/filter-range"
-
-
+import "../js/components/anchor"
+import "../js/components/delete-product"
 wsTabs.init();
+import "../js/jquery.googlemap"
+import "../js/components/maps"
 
-
-  
-
-    
-
-
-
-
-
-    
-
-
-     
-
+$('.jsPhons').each(function () {
+    $(this).attr('href', "tel:" + $(this).text().replace(/\s/g, ''))
+})

@@ -18,7 +18,7 @@
             @endif
             @endfor
         </div>
-        <div class="product__feedback">{{$product->feedback}}</div>
+        <a href="{{url('/item')}}#product-detail" class="product__feedback jsFeedBack">{{$product->feedback}}</a>
         <div class="product-quantity">В наличии: 24 шт.</div>
     </div>
 
@@ -54,12 +54,16 @@
     <div class="wrap">
     <div class="box__wrap"><input type="number" value="4" class="box">шт.</div></div>
     
-        <button class="button product-buy">
-                <svg class="product-buy__icon">
-                        <use xlink:href="sprite.svg#sprite-basket"></use>
-                    </svg>
+    <div class="product-buy__button">
+        <button data-mfp-src="#popup-basket" class="button button--gradient popup-open">
+            <span class="product-buy__svg">
+                    <svg class="button__svg">
+                            <use xlink:href="sprite.svg#sprite-basket"></use>
+                        </svg>
+            </span>
+                
             купить товар</button>
-        
+    </div>
     </div>
     
     <div class="product-tools">

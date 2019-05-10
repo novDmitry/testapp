@@ -84,14 +84,14 @@
 
 .product-cards__items {
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin: auto;
-    max-width: 320px;
+    // max-width: 320px;
 
-    @include rwd(480) {
-        max-width: 480px;
-    }
+    // @include rwd(480) {
+    //     max-width: 480px;
+    // }
 
     @include md {
         max-width: 750px;
@@ -105,7 +105,8 @@
 
 
 .product-cards__item {
-    max-width: 335px;
+    width: 43%;
+    max-width: 280px;
     padding-right: 10px;
     padding-top: 20px;
     padding-bottom: 12px;
@@ -140,21 +141,9 @@
     // }
 
 
-    // @include md {
-    //     max-width: 319px;
-    //     padding-right: 9px;
-    //     padding-left: 11px;
-    //     &:first-child {
-    //         max-width: 317px;
-    //         padding-right: 9px;
-    //         padding-left: 7px;
-    //     }
-    //     &:last-child {
-    //         max-width: 319px;
-    //         padding-right: 9px;
-    //         padding-left: 7px;
-    //     }
-    // }
+    @include md {
+        max-width: 335px;
+    }
 
     // @include rwd(1350) {
     //     &:first-child {
@@ -186,12 +175,16 @@
 }
 
 .title {
+    cursor: pointer;
     line-height: 1.4;
     min-height: 25px;
     font-size: 9px;
     color: #3b3b3b;
     text-decoration: underline;
     font-weight: normal;
+    &:hover {
+        text-decoration: none;
+    }
 
     @include md {
         min-height: 59px;
@@ -252,12 +245,16 @@
     margin-right: 28px;
     margin-left: 10px;
     color: #9b9b9b;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .product-info__feedback {
     margin-top: 5px;
     font-size: 13px;
     color: #9b9b9b;
+    cursor: pointer;
 
     @include md {
         margin-top: 0;
@@ -439,7 +436,7 @@
 
             @include md {
                 top: 7px;
-                width: 82px;
+                width: 62px;
             }
         }
     }
@@ -525,9 +522,10 @@
     
 }
 
-.product-buy {
+.product-buy__button {
     font-weight: bold;
     width: 100%;
+    // max-width: 218px;
     margin: auto;
     font-size: 10px;
     color: #fff;
@@ -556,13 +554,13 @@
         background: linear-gradient(to right,#d36e00 0%, #ff8500 50%, #ffae00);
         z-index: -1;
     }
+}
 
-    .product-buy__icon {
-        width: 31px;
-        height: 26px;
-        fill: #fff;
-        margin-right: 15px;
-    }
+.product-buy__svg {
+    width: 31px;
+    height: 26px;
+    fill: #fff;
+    margin-right: 15px;
 }
 
 .product-tools {
@@ -591,6 +589,9 @@
         .product-tool__link {
             font-size: 14px;
             color: #3b3b3b;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -607,6 +608,7 @@
     padding-top: 63px;
     float: left;
     display: none;
+    cursor: zoom-in;
 
     @include rwd(1070) {
         display: block;
@@ -643,6 +645,7 @@
 .product-info__list {
     display: flex;
     align-items: center;
+    text-decoration: none;
 
     .product-info__link {
         max-width: 230px;
@@ -652,6 +655,7 @@
         font-size: 9px;
         font-weight: normal;
         color: #000;
+        text-decoration: none;
 
         @include md {
             font-size: 12px;
@@ -958,6 +962,9 @@
         background-color: #e6e6e6;
         z-index: -1;
     }
+    .is-active {
+        color: #3d3d3d;
+    }
 }
 
 .product-detail-nav__tab{
@@ -1191,6 +1198,7 @@ span.is-active {
 .product-feedback__items {
     width: 100%;
     max-width: 690px;
+    padding-right: 10px;
 }
 
 .product-feedback__item{
@@ -1238,12 +1246,11 @@ span.is-active {
 }
 
 
-.product-feedback__form-wrapper{
-}
-
 .product-feedback__form {
     background-color: #f5f5f5;
     padding: 33px;
+    position: sticky;
+    top: 0;
 }
 
 .product-feedback__form-title {
@@ -1258,12 +1265,17 @@ span.is-active {
     margin-bottom: 30px;
 
     @include md {
+        flex-wrap: wrap;
         flex-direction: row;
     }
 
     .field__wrap {
         margin-bottom: 10px;
         padding-right: 40px;
+
+        &:last-child {
+            padding-right: 0;
+        }
 
         label {
             font-size: 14px;
@@ -1287,9 +1299,6 @@ span.is-active {
             margin-top: 15px;
         }
     }
-}
-
-.product-feedback-grade__wrap {
 }
 
 .product-feedback-grade__title {
@@ -1323,6 +1332,9 @@ span.is-active {
         max-width: 210px;
         width: 100%;
         font-weight: normal;
+        &:hover {
+            background-color: #697484;
+        }
     }
 }
 
@@ -1339,6 +1351,7 @@ span.is-active {
         width: 16px;
         height: 15px;
         fill: #ff8800;
+        flex-shrink: 0;
     }
 }
 
@@ -1350,7 +1363,7 @@ span.is-active {
     display: none;
 
     @include md {
-        height: 520px;
+        min-height: 520px;
     }
 }
 .is-active {

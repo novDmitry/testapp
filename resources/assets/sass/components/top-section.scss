@@ -1,22 +1,23 @@
-.top-section__wrapper {
-    max-width: 1360px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+// .top-section__wrapper {
+//     max-width: 1360px;
+//     width: 100%;
+//     margin: auto;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
 
-    @include sm {
-        flex-wrap: wrap;
-    }
+//     @include sm {
+//         padding-top: 51px;
+//         flex-wrap: wrap;
+//     }
 
-    @include md {
-        flex-wrap: nowrap;
-        padding-top: 35px;
-    }
-}
+//     @include md {
+//         flex-wrap: nowrap;
+//         padding-top: 35px;
+//     }
+// }
 
-.menu-category__wrapper {
+.menu {
     margin: 0 auto;
     max-width: 320px;
     width: 100%;
@@ -27,6 +28,41 @@
 
     @include md {
         margin: 0;
+    }
+
+    &__title-wrap {
+        display: flex;
+    }
+
+    &__button {
+        width: 57px;
+        background-color: #ff6c00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hamburger-box {
+            width: 15px;
+        }
+    
+        .hamburger-inner {
+            top: 19px;
+            width: 8px;
+            height: 3px;
+            border-radius: 0px;
+            &:before {
+                top: -6px;
+                width: 15px;
+                height: 3px;
+                border-radius: 0px;
+            }
+            &:after {
+                width: 10px;
+                top: -12px;
+                height: 3px;
+                border-radius: 0px;
+            }
+        }
     }
 }
 
@@ -39,42 +75,7 @@
     }
 }
 
-.menu-category__title-wrap {
-    display: flex;
-}
-
-.menu-category__button-wrap {
-    width: 57px;
-    background-color: #ff6c00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .hamburger-box {
-        width: 15px;
-    }
-
-    .hamburger-inner {
-        top: 19px;
-        width: 8px;
-        height: 3px;
-        border-radius: 0px;
-        &:before {
-            top: -6px;
-            width: 15px;
-            height: 3px;
-            border-radius: 0px;
-        }
-        &:after {
-            width: 10px;
-            top: -12px;
-            height: 3px;
-            border-radius: 0px;
-        }
-    }
-}
-
-.menu-category__title {
+.menu__title {
     color: #fff;
     width: 100%;
     padding-left: 23px;
@@ -88,7 +89,7 @@
     }
 }
 
-.menu-category__links-list {
+.menu__links-list {
     margin: 0;
     position: absolute;
     z-index: 9999;
@@ -97,7 +98,7 @@
     background-color: #fff;
 }
 
-.menu-category__links {
+.menu__links {
     display: none;
     margin: 0;
 
@@ -109,7 +110,7 @@
         text-decoration: none;
 
         &:first-child {
-            .menu-category__link {
+            .menu__link {
                 padding-top: 10px;
             }   
         }
@@ -121,7 +122,7 @@
     display: block;
 }
 
-.menu-category__link {
+.menu__link {
     padding: 0;
     list-style: none;
     height: 54px;
@@ -151,15 +152,19 @@
 }
 
 .search__wrapper {
+    margin-top: 57px;
     max-width: 1015px;
     width: 100%;
+    @include md {
+        margin-top: 0;
+    }
 }
 
-.search__form {
+.search-form {
     display: flex;
 }
 
-.search__block {
+.search {
     display: flex;
     align-items: center;
     width: 100%;
@@ -177,7 +182,7 @@
     }
 }
 
-.top-search__input {
+.search__input {
     max-width: 700px;
     width: 100%;
     height: 56px;
@@ -213,8 +218,6 @@
     height: 56px;
     max-width: 56px;
     width: 100%;
-    color: #fff;
-    background-color: #ff8900;
     font-size: 16px;
 
     @include md {
@@ -230,7 +233,7 @@
         }
     }
 
-    .search__button-title {
+    .button__text {
         display: none;
 
         @include  md {
@@ -417,7 +420,7 @@
         background-color: #fff;
     }
 
-    .title {
+    .prise-filter__title {
         width: 34px;
         line-height: 38px;
         font-size: 14px;
@@ -477,11 +480,4 @@
     font-weight: bold;
     font-size: 14px;
     color: #fff;
-    &--reset {
-        background-color: #ff4800;
-    }
-    &--submit {
-        text-transform: uppercase;
-        background: linear-gradient(to right, #ff8b00 , #ffb413);
-    }
 }

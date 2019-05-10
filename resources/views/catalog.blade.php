@@ -4,8 +4,9 @@
 
 @section('content')
     @include('widgets/header')
-
-    <div class="top-section__wrapper">
+    <div class="section section--top">
+        <div class="section__container">
+            <div class="section__row">
             @include('widgets/menu-category', [
                 'add_links' => ''
             ])
@@ -13,9 +14,12 @@
                 @include('widgets/search')
             </div>
         </div>
-    <div class="section__wrapper">
+    
+        <div class="section__row">
             @include('widgets/catalog-filter')
             @include('widgets/catalogs')
+        </div>
     </div>
+        </div>
     @include('widgets/footer')
 @endsection

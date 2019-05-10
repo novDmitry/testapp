@@ -15,9 +15,9 @@
             
                             <div class="filter-product-price__input-wrapper">
                                 <span>от</span>
-                                <input type="text" class="input price_input jsPrice" min="100" value="100" id="jsMinPrice">
+                                <input type="text" class="input price_input jsPrice jsMinPrice" min="100" value="100" id="jsMinPrice">
                                 <span>до</span>
-                                <input type="text" class="input price_input jsPrice" min="100" value="100 000" id="jsMaxPrice">
+                                <input type="text" class="input price_input jsPrice jsMaxPrice" min="100" value="100 000" id="jsMaxPrice">
                                 <span>грн</span>
                             </div>
             
@@ -38,29 +38,35 @@
                         @if ($filter_category == $_mock->filter_category->filter_categorys[0])
                         <div class="filter-category">
             
-                                <div class="filter-category__title">{{$filter_category->title}}</div>
+                                <div class="filter-category__title jsSubFilterOpen">{{$filter_category->title}}
+                                    <svg class="sub-filter__svg jsSvgFilterAnim">
+                                        <use xlink:href="sprite.svg#sprite-arrow-filter"></use>
+                                    </svg>
+                                </div>
             
-                                <div class="filter-category__items">
+                                <div class="filter-category__items ">
             
                                     @foreach ($filter_category->items as $item)
                                     <div class="filter-category__item">
-                                            <label class="filter-category__label">
-                                                <input type="checkbox" name="checkbox" id="filter-category" class="filter-category__checkbox">
+                                            <label id="filter-category" class="filter-category__label">
+                                                <input type="checkbox" checked name="checkbox" id="filter-category" class="filter-category__checkbox">
                                                 <label for="filter-category" class="filter-category__cheackbox--cst"></label>
                                                 <div class="filter-category__label-text">{{$item}}</div>
                                             </label>
                                         </div>
                                     @endforeach
-                                    
+                                    <a href="#" class="filter-category__item--all">Показать все производители</a>
                                 </div>
             
-                                <a href="#" class="filter-category__item--all">Показать все производители</a>
                             </div>
                         @else
                         
                         <div class="filter-category">
             
-                                <div class="filter-category__title">{{$filter_category->title}}</div>
+                                <div class="filter-category__title jsSubFilterOpen">{{$filter_category->title}}
+                                    <svg class="sub-filter__svg jsSvgFilterAnim">
+                                        <use xlink:href="sprite.svg#sprite-arrow-filter"></use>
+                                    </svg></div>
             
                                 <div class="filter-category__items">
             
@@ -79,7 +85,11 @@
                         @endif
                         @endforeach
             
-                        <button type="reset" class="button reset-filter__button resetFilterBtn">Очистить фильтр</button>
+                        <button type="reset" class="button reset-filter__button resetFilterBtn">
+                                <svg class="cross__icon">
+                                        <use xlink:href="sprite.svg#sprite-cross"></use>
+                                    </svg>
+                            Очистить фильтр</button>
             
                         </div>
 

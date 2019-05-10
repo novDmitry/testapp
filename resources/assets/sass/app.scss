@@ -1,6 +1,6 @@
 // Variables
 $hamburger-padding-x: 10px;
-$hamburger-padding-y: 12px;
+$hamburger-padding-y: 10px;
 $hamburger-layer-color: #fff;
 
 @import "./node_modules/hamburgers/_sass/hamburgers/hamburgers";
@@ -9,6 +9,7 @@ $hamburger-layer-color: #fff;
 @import "components/ion.rangeSlider.min.css";
 @import "variables";
 @import "mixins";
+@import "default.scss";
 @import "./node_modules/magnific-popup/src/css/settings";
 @import "./node_modules/magnific-popup/src/css/main.scss";
 @import "components/header.scss";
@@ -19,59 +20,9 @@ $hamburger-layer-color: #fff;
 @import "components/filter.scss";
 @import "components/catalog.scss";
 @import "components/popup-basket.scss";
+@import "components/contact.scss";
 
 
 
-
-
-
-body {
-    font-size: 16px;
-    min-width: 320px;
-    position: relative;
-    line-height: 1.15;
-    font-family: $default-font;
-    overflow-x: hidden;
-    margin: 0;
-    background-color: #fff;
-  }
-
-  svg path {
-    stroke: inherit;
-    stroke-width: inherit;
-    fill: inherit;
-  }
-  
-  .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  ::selection {
-    background-color: $accent;
-    color: #ffffff;
-  }
-
-  ::-webkit-scrollbar
-{
-  width: 1px;  /* for vertical scrollbars */
-  height: 1px; /* for horizontal scrollbars */
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-  .wrapper {
-    width: 100%;
-    height: 100vh;
-  }
   
 

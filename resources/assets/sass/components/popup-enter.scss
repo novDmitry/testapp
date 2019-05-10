@@ -169,6 +169,8 @@
             max-width: 50px;
 
             .svg-social {
+                width: 15px;
+                height: 15px;
                 margin-right: 0px;
             }
         }
@@ -193,19 +195,20 @@
         }
     }
 
-    .button {
+}
 
-        &--blue {
-            background-color: #3b5998;
-        }
+.button {
 
-        &--lblue {
-            background-color: #41abe1;
-        }
+    &--blue {
+        background-color: #3b5998;
+    }
 
-        &--red {
-            background-color: #ea4335;
-        }
+    &--lblue {
+        background-color: #41abe1;
+    }
+
+    &--red {
+        background-color: #ea4335;
     }
 }
 
